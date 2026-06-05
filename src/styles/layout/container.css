@@ -1,0 +1,39 @@
+/* =========================================================
+   GENERAL LAYOUT
+========================================================= */
+
+.container {
+  width: min(100% - 3rem, 1600px);
+
+  margin-inline: auto;
+}
+
+/* =========================================================
+   GRID LAYOUT
+========================================================= */
+
+.container-grid {
+  width: min(100% - 3rem, 1400px);
+
+  margin-inline: auto;
+}
+
+.container-grid-pokedex {
+  width: min(100% - 3rem, 1400px);
+
+  margin-inline: auto;
+
+  margin-top: 3rem;
+}
+
+.container-buton {
+  width: min(100% - 3rem, 1400px);
+
+  margin-inline: auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}

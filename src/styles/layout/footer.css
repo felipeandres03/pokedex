@@ -1,0 +1,19 @@
+.footer {
+  width: min(100%, var(--max-width));
+
+  margin: 0 auto;
+
+  margin-top: 4rem;
+
+  padding: 2rem;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top: 1px solid var(--color-border);
+
+  color: var(--color-text-muted);
+}

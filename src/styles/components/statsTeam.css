@@ -1,0 +1,85 @@
+.stats-team {
+  display: flex;
+
+  justify-content: center;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 1rem;
+
+  margin-top: -3rem;
+
+  position: relative;
+
+  z-index: 5;
+
+  margin-bottom: 4rem;
+
+  padding: 0 10rem 0 10rem;
+}
+
+.stats-team__card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.9rem;
+
+  padding: 1rem 1.2rem;
+
+  min-width: 520px;
+
+  border-radius: 1.3rem;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.stats-team__card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255, 90, 90, 0.35);
+
+  box-shadow: 0 20px 40px rgba(255, 80, 80, 0.15);
+}
+
+.stats-team__card img {
+  width: 52px;
+
+  height: 52px;
+
+  object-fit: contain;
+}
+
+.stats-team__info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.35rem;
+}
+
+.stats-team__info span {
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.5px;
+}
+
+.stats-team__info strong {
+  color: white;
+
+  font-size: 2rem;
+
+  font-weight: 800;
+
+  line-height: 1;
+}

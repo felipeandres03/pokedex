@@ -1,0 +1,393 @@
+/* ======================================================
+   BAR TYPE
+====================================================== */
+
+.bar-type {
+  position: relative;
+
+  width: fit-content;
+
+  margin-bottom: 3rem;
+}
+
+/* ======================================================
+   TRIGGER
+====================================================== */
+
+.bar-type__trigger {
+  height: 56px;
+
+  padding-inline: 1.5rem;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+}
+
+.bar-type__trigger:hover {
+  transform: translateY(-2px);
+}
+
+/* ======================================================
+   ARROW
+====================================================== */
+
+.bar-type__arrow {
+  transition: 0.25s ease;
+}
+
+.bar-type__arrow.active {
+  transform: rotate(180deg);
+}
+
+/* ======================================================
+   DROPDOWN
+====================================================== */
+
+.bar-type__dropdown {
+  position: absolute;
+
+  top: calc(100% + 1rem);
+
+  left: 0;
+
+  width: 320px;
+
+  padding: 1rem;
+
+  border-radius: 24px;
+
+  background: rgba(12, 12, 18, 0.95);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.8rem;
+
+  z-index: 100;
+
+  animation: fadeIn 0.25s ease;
+}
+
+/* ======================================================
+   ITEM
+====================================================== */
+
+.bar-type__item {
+  height: 42px;
+
+  padding-inline: 1rem;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  text-transform: capitalize;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.bar-type__item:hover {
+  transform: translateY(-2px);
+}
+
+/* ======================================================
+   ACTIVE
+====================================================== */
+
+.bar-type__item.active {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+
+  border-color: transparent;
+}
+
+/* ======================================================
+   ANIMATION
+====================================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* ======================================================
+   TYPES
+====================================================== */
+
+.type--fire {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.35);
+  color: #fdba74;
+}
+
+.type--fire:hover {
+  background: rgba(249, 115, 22, 0.25);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.25);
+}
+
+/* WATER */
+
+.type--water {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.35);
+  color: #93c5fd;
+}
+
+.type--water:hover {
+  background: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+}
+
+/* GRASS */
+
+.type--grass {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.35);
+  color: #86efac;
+}
+
+.type--grass:hover {
+  background: rgba(34, 197, 94, 0.25);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.25);
+}
+
+/* ELECTRIC */
+
+.type--electric {
+  background: rgba(250, 204, 21, 0.15);
+  border-color: rgba(250, 204, 21, 0.35);
+  color: #fde047;
+}
+
+.type--electric:hover {
+  background: rgba(250, 204, 21, 0.25);
+  box-shadow: 0 10px 25px rgba(250, 204, 21, 0.25);
+}
+
+/* PSYCHIC */
+
+.type--psychic {
+  background: rgba(236, 72, 153, 0.15);
+  border-color: rgba(236, 72, 153, 0.35);
+  color: #f9a8d4;
+}
+
+.type--psychic:hover {
+  background: rgba(236, 72, 153, 0.25);
+  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.25);
+}
+
+/* GHOST */
+
+.type--ghost {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.35);
+  color: #d8b4fe;
+}
+
+.type--ghost:hover {
+  background: rgba(168, 85, 247, 0.25);
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.25);
+}
+
+/* DRAGON */
+
+.type--dragon {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.35);
+  color: #a5b4fc;
+}
+
+.type--dragon:hover {
+  background: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+}
+
+/* DARK */
+
+.type--dark {
+  background: rgba(75, 85, 99, 0.2);
+  border-color: rgba(75, 85, 99, 0.4);
+  color: #d1d5db;
+}
+
+.type--dark:hover {
+  background: rgba(75, 85, 99, 0.3);
+  box-shadow: 0 10px 25px rgba(75, 85, 99, 0.25);
+}
+
+/* FAIRY */
+
+.type--fairy {
+  background: rgba(244, 114, 182, 0.15);
+  border-color: rgba(244, 114, 182, 0.35);
+  color: #f9a8d4;
+}
+
+.type--fairy:hover {
+  background: rgba(244, 114, 182, 0.25);
+  box-shadow: 0 10px 25px rgba(244, 114, 182, 0.25);
+}
+
+/* ICE */
+
+.type--ice {
+  background: rgba(34, 211, 238, 0.15);
+  border-color: rgba(34, 211, 238, 0.35);
+  color: #67e8f9;
+}
+
+.type--ice:hover {
+  background: rgba(34, 211, 238, 0.25);
+  box-shadow: 0 10px 25px rgba(34, 211, 238, 0.25);
+}
+
+/* ROCK */
+
+.type--rock {
+  background: rgba(161, 98, 7, 0.15);
+  border-color: rgba(161, 98, 7, 0.35);
+  color: #facc15;
+}
+
+.type--rock:hover {
+  background: rgba(161, 98, 7, 0.25);
+  box-shadow: 0 10px 25px rgba(161, 98, 7, 0.25);
+}
+
+/* GROUND */
+
+.type--ground {
+  background: rgba(180, 83, 9, 0.15);
+  border-color: rgba(180, 83, 9, 0.35);
+  color: #fdba74;
+}
+
+.type--ground:hover {
+  background: rgba(180, 83, 9, 0.25);
+  box-shadow: 0 10px 25px rgba(180, 83, 9, 0.25);
+}
+
+/* STEEL */
+
+.type--steel {
+  background: rgba(148, 163, 184, 0.15);
+  border-color: rgba(148, 163, 184, 0.35);
+  color: #cbd5e1;
+}
+
+.type--steel:hover {
+  background: rgba(148, 163, 184, 0.25);
+  box-shadow: 0 10px 25px rgba(148, 163, 184, 0.25);
+}
+
+/* FIGHTING */
+
+.type--fighting {
+  background: rgba(220, 38, 38, 0.15);
+  border-color: rgba(220, 38, 38, 0.35);
+  color: #fca5a5;
+}
+
+.type--fighting:hover {
+  background: rgba(220, 38, 38, 0.25);
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.25);
+}
+
+/* POISON */
+
+.type--poison {
+  background: rgba(147, 51, 234, 0.15);
+  border-color: rgba(147, 51, 234, 0.35);
+  color: #d8b4fe;
+}
+
+.type--poison:hover {
+  background: rgba(147, 51, 234, 0.25);
+  box-shadow: 0 10px 25px rgba(147, 51, 234, 0.25);
+}
+
+/* BUG */
+
+.type--bug {
+  background: rgba(132, 204, 22, 0.15);
+  border-color: rgba(132, 204, 22, 0.35);
+  color: #bef264;
+}
+
+.type--bug:hover {
+  background: rgba(132, 204, 22, 0.25);
+  box-shadow: 0 10px 25px rgba(132, 204, 22, 0.25);
+}
+
+/* FLYING */
+
+.type--flying {
+  background: rgba(96, 165, 250, 0.15);
+  border-color: rgba(96, 165, 250, 0.35);
+  color: #bfdbfe;
+}
+
+.type--flying:hover {
+  background: rgba(96, 165, 250, 0.25);
+  box-shadow: 0 10px 25px rgba(96, 165, 250, 0.25);
+}
+
+/* NORMAL */
+
+.type--normal {
+  background: rgba(163, 163, 163, 0.15);
+  border-color: rgba(163, 163, 163, 0.35);
+  color: #e5e5e5;
+}
+
+.type--normal:hover {
+  background: rgba(163, 163, 163, 0.25);
+  box-shadow: 0 10px 25px rgba(163, 163, 163, 0.25);
+}

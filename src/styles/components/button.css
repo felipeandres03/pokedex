@@ -1,0 +1,37 @@
+.button-primary {
+  height: 70px;
+
+  padding-inline: 2rem;
+
+  border-radius: var(--radius-md);
+
+  background: linear-gradient(135deg, #ef4444, #f1091c);
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 10px 30px rgba(239, 68, 68, 0.25),
+    0 0 20px rgba(236, 72, 153, 0.15);
+
+  transition: var(--transition-medium);
+}
+
+.button-primary:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 40px rgba(239, 68, 68, 0.35),
+    0 0 25px rgba(236, 72, 153, 0.25);
+}
+
+.button-primary:active {
+  transform: scale(0.98);
+}

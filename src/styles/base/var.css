@@ -1,0 +1,58 @@
+:root {
+  /* COLORS */
+  --color-bg: #050816;
+  --color-surface: #0f172a;
+  --color-surface-light: #1e293b;
+
+  --color-primary: #ef4444;
+  --color-secondary: #e92525;
+  --color-accent: #f97316;
+
+  --color-text: #f8fafc;
+  --color-text-muted: #94a3b8;
+
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* TYPE COLORS */
+  --type-fire: #f97316;
+  --type-water: #38bdf8;
+  --type-grass: #22c55e;
+  --type-electric: #facc15;
+  --type-psychic: #ec4899;
+  --type-ghost: #8b5cf6;
+  --type-normal: #a8a29e;
+  --type-bug: #84cc16;
+  --type-fighting: #dc2626;
+  --type-flying: #60a5fa;
+  --type-steel: #94a3b8;
+  --type-ice: #67e8f9;
+  --type-poison: #a855f7;
+  --type-fairy: #f9a8d4;
+  --type-ground: #ca8a04;
+  --type-rock: #a16207;
+  --type-dragon: #7c3aed;
+  --type-dark: #334155;
+
+  /* SHADOWS */
+  --shadow-primary: 0 0 20px rgba(124, 58, 237, 0.35);
+
+  --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+  /* BORDER RADIUS */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* SPACING */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* TRANSITIONS */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+
+  /* WIDTH */
+  --max-width: 1800px;
+}

@@ -1,0 +1,818 @@
+/* =============================================
+   BASE
+   ============================================= */
+:root {
+  --details-bg: #0b0b0f;
+  --details-border: rgba(255, 255, 255, 0.08);
+  --details-text: #f0f0f0;
+  --details-muted: rgba(255, 255, 255, 0.45);
+  --panel-radius: 16px;
+}
+
+.details {
+  --color: var(--type-normal);
+  --color-glow: color-mix(in srgb, var(--type-normal) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-normal) 12%, transparent);
+}
+
+.details--fire {
+  --color: var(--type-fire);
+  --color-glow: color-mix(in srgb, var(--type-fire) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-fire) 12%, transparent);
+}
+.details--water {
+  --color: var(--type-water);
+  --color-glow: color-mix(in srgb, var(--type-water) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-water) 12%, transparent);
+}
+.details--grass {
+  --color: var(--type-grass);
+  --color-glow: color-mix(in srgb, var(--type-grass) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-grass) 12%, transparent);
+}
+.details--electric {
+  --color: var(--type-electric);
+  --color-glow: color-mix(in srgb, var(--type-electric) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-electric) 12%, transparent);
+}
+.details--psychic {
+  --color: var(--type-psychic);
+  --color-glow: color-mix(in srgb, var(--type-psychic) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-psychic) 12%, transparent);
+}
+.details--ghost {
+  --color: var(--type-ghost);
+  --color-glow: color-mix(in srgb, var(--type-ghost) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-ghost) 12%, transparent);
+}
+.details--bug {
+  --color: var(--type-bug);
+  --color-glow: color-mix(in srgb, var(--type-bug) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-bug) 12%, transparent);
+}
+.details--fighting {
+  --color: var(--type-fighting);
+  --color-glow: color-mix(in srgb, var(--type-fighting) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-fighting) 12%, transparent);
+}
+.details--flying {
+  --color: var(--type-flying);
+  --color-glow: color-mix(in srgb, var(--type-flying) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-flying) 12%, transparent);
+}
+.details--steel {
+  --color: var(--type-steel);
+  --color-glow: color-mix(in srgb, var(--type-steel) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-steel) 12%, transparent);
+}
+.details--ice {
+  --color: var(--type-ice);
+  --color-glow: color-mix(in srgb, var(--type-ice) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-ice) 12%, transparent);
+}
+.details--poison {
+  --color: var(--type-poison);
+  --color-glow: color-mix(in srgb, var(--type-poison) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-poison) 12%, transparent);
+}
+.details--fairy {
+  --color: var(--type-fairy);
+  --color-glow: color-mix(in srgb, var(--type-fairy) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-fairy) 12%, transparent);
+}
+.details--ground {
+  --color: var(--type-ground);
+  --color-glow: color-mix(in srgb, var(--type-ground) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-ground) 12%, transparent);
+}
+.details--rock {
+  --color: var(--type-rock);
+  --color-glow: color-mix(in srgb, var(--type-rock) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-rock) 12%, transparent);
+}
+.details--dragon {
+  --color: var(--type-dragon);
+  --color-glow: color-mix(in srgb, var(--type-dragon) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-dragon) 12%, transparent);
+}
+.details--dark {
+  --color: var(--type-dark);
+  --color-glow: color-mix(in srgb, var(--type-dark) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-dark) 12%, transparent);
+}
+.details--normal {
+  --color: var(--type-normal);
+  --color-glow: color-mix(in srgb, var(--type-normal) 55%, transparent);
+  --color-bg: color-mix(in srgb, var(--type-normal) 12%, transparent);
+}
+
+/* =============================================
+   SECTION BASE
+   ============================================= */
+.details {
+  position: relative;
+  width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  color: var(--details-text);
+  background: var(--details-bg);
+}
+
+/* =============================================
+   BACKGROUNDS
+   ============================================= */
+.details__bg-art {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 60% 70% at 50% 40%,
+      var(--color-glow) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 40% 50% at 20% 80%,
+      rgba(0, 0, 0, 0.8) 0%,
+      transparent 70%
+    );
+  z-index: 0;
+  animation: bgPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes bgPulse {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.details__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.3) 45%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+/* =============================================
+   TOP BAR
+   ============================================= */
+.details__topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+}
+
+.details__back:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color);
+}
+
+.details__fav {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--details-border);
+  backdrop-filter: blur(8px);
+  color: var(--color);
+  font-size: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.15s,
+    background 0.2s;
+}
+.details__fav:hover {
+  transform: scale(1.1);
+  background: var(--color-bg);
+}
+
+/* =============================================
+   MAIN LAYOUT — 3 columnas
+   ============================================= */
+.details__layout {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 280px 1fr 340px;
+  min-height: 94vh;
+  padding: 80px 28px 28px;
+  gap: 0 24px;
+  align-items: center;
+}
+
+/* =============================================
+   LEFT COLUMN
+   ============================================= */
+.details__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding-bottom: 32px;
+  gap: 20px;
+  position: relative;
+}
+
+.details__id-bg {
+  position: absolute;
+  top: 60px;
+  left: -16px;
+  font-family: "Rajdhani", sans-serif;
+  font-size: clamp(100px, 14vw, 170px);
+  font-weight: 700;
+  color: var(--color);
+  opacity: 0.18;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -4px;
+}
+
+.details__meta {
+  margin-top: auto;
+}
+
+.details__id-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color);
+  letter-spacing: 2px;
+  margin: 0 0 6px;
+  opacity: 0.8;
+}
+
+.details__name {
+  font-family: "Rajdhani", sans-serif;
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 700;
+  line-height: 1;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.details__description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--details-muted);
+  margin: 14px 0 0;
+  max-width: 240px;
+}
+
+/* Type badges */
+.details__types {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.details__type {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+/* Cada badge usa directamente la variable del tipo */
+.type--fire {
+  color: var(--type-fire);
+  background: color-mix(in srgb, var(--type-fire) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-fire) 60%, transparent);
+}
+.type--water {
+  color: var(--type-water);
+  background: color-mix(in srgb, var(--type-water) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-water) 60%, transparent);
+}
+.type--grass {
+  color: var(--type-grass);
+  background: color-mix(in srgb, var(--type-grass) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-grass) 60%, transparent);
+}
+.type--electric {
+  color: var(--type-electric);
+  background: color-mix(in srgb, var(--type-electric) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-electric) 60%, transparent);
+}
+.type--psychic {
+  color: var(--type-psychic);
+  background: color-mix(in srgb, var(--type-psychic) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-psychic) 60%, transparent);
+}
+.type--ghost {
+  color: var(--type-ghost);
+  background: color-mix(in srgb, var(--type-ghost) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-ghost) 60%, transparent);
+}
+.type--bug {
+  color: var(--type-bug);
+  background: color-mix(in srgb, var(--type-bug) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-bug) 60%, transparent);
+}
+.type--fighting {
+  color: var(--type-fighting);
+  background: color-mix(in srgb, var(--type-fighting) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-fighting) 60%, transparent);
+}
+.type--flying {
+  color: var(--type-flying);
+  background: color-mix(in srgb, var(--type-flying) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-flying) 60%, transparent);
+}
+.type--steel {
+  color: var(--type-steel);
+  background: color-mix(in srgb, var(--type-steel) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-steel) 60%, transparent);
+}
+.type--ice {
+  color: var(--type-ice);
+  background: color-mix(in srgb, var(--type-ice) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-ice) 60%, transparent);
+}
+.type--poison {
+  color: var(--type-poison);
+  background: color-mix(in srgb, var(--type-poison) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-poison) 60%, transparent);
+}
+.type--fairy {
+  color: var(--type-fairy);
+  background: color-mix(in srgb, var(--type-fairy) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-fairy) 60%, transparent);
+}
+.type--ground {
+  color: var(--type-ground);
+  background: color-mix(in srgb, var(--type-ground) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-ground) 60%, transparent);
+}
+.type--rock {
+  color: var(--type-rock);
+  background: color-mix(in srgb, var(--type-rock) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-rock) 60%, transparent);
+}
+.type--dragon {
+  color: var(--type-dragon);
+  background: color-mix(in srgb, var(--type-dragon) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-dragon) 60%, transparent);
+}
+.type--dark {
+  color: var(--type-dark);
+  background: color-mix(in srgb, var(--type-dark) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-dark) 60%, transparent);
+}
+.type--normal {
+  color: var(--type-normal);
+  background: color-mix(in srgb, var(--type-normal) 12%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--type-normal) 60%, transparent);
+}
+
+/* Type Strength card */
+.details__type-strength {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--details-border);
+  border-radius: var(--panel-radius);
+  padding: 16px 18px;
+  backdrop-filter: blur(12px);
+}
+
+.details__ts-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--details-text);
+  letter-spacing: 0.5px;
+}
+
+.details__ts-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.details__ts-row:last-child {
+  margin-bottom: 0;
+}
+
+.details__ts-label {
+  font-size: 12px;
+  color: var(--details-muted);
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.details__ts-icons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Dots — usan la variable del tipo directamente */
+.details__ts-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+}
+.type-dot--fire {
+  background: var(--type-fire);
+}
+.type-dot--water {
+  background: var(--type-water);
+}
+.type-dot--grass {
+  background: var(--type-grass);
+}
+.type-dot--electric {
+  background: var(--type-electric);
+}
+.type-dot--psychic {
+  background: var(--type-psychic);
+}
+.type-dot--ghost {
+  background: var(--type-ghost);
+}
+.type-dot--bug {
+  background: var(--type-bug);
+}
+.type-dot--fighting {
+  background: var(--type-fighting);
+}
+.type-dot--flying {
+  background: var(--type-flying);
+}
+.type-dot--steel {
+  background: var(--type-steel);
+}
+.type-dot--ice {
+  background: var(--type-ice);
+}
+.type-dot--poison {
+  background: var(--type-poison);
+}
+.type-dot--fairy {
+  background: var(--type-fairy);
+}
+.type-dot--ground {
+  background: var(--type-ground);
+}
+.type-dot--rock {
+  background: var(--type-rock);
+}
+.type-dot--dragon {
+  background: var(--type-dragon);
+}
+.type-dot--dark {
+  background: var(--type-dark);
+}
+.type-dot--normal {
+  background: var(--type-normal);
+}
+
+/* =============================================
+   CENTER — ARTWORK
+   ============================================= */
+.details__artwork {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.details__moon {
+  position: absolute;
+  width: min(420px, 55vw);
+  height: min(420px, 55vw);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color) 0%, transparent 70%);
+  opacity: 0.2;
+  animation: moonPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes moonPulse {
+  from {
+    transform: scale(0.95);
+    opacity: 0.15;
+  }
+  to {
+    transform: scale(1.05);
+    opacity: 0.28;
+  }
+}
+
+.details__glow-ring {
+  position: absolute;
+  width: min(380px, 50vw);
+  height: min(380px, 50vw);
+  border-radius: 50%;
+  border: 2px solid var(--color);
+  opacity: 0.15;
+  animation: ringPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes ringPulse {
+  from {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+  to {
+    transform: scale(1.08);
+    opacity: 0.22;
+  }
+}
+
+.details__image {
+  position: relative;
+  z-index: 2;
+  width: min(600px, 52vw);
+  height: min(600px, 52vw);
+  object-fit: contain;
+  filter: drop-shadow(0 0 40px var(--color-glow))
+    drop-shadow(0 0 80px var(--color-glow));
+  animation: floatImage 5s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* =============================================
+   RIGHT COLUMN
+   ============================================= */
+.details__right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+/* Measurements */
+.details__measurements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.details__measurement-card {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--details-border);
+  border-radius: var(--panel-radius);
+  padding: 16px 18px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.2s;
+}
+.details__measurement-card:hover {
+  border-color: var(--color);
+}
+
+.details__meas-icon {
+  font-size: 22px;
+}
+
+.details__meas-label {
+  display: block;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--details-muted);
+  margin-bottom: 3px;
+}
+
+.details__meas-value {
+  display: block;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--details-text);
+}
+
+/* Panel genérico */
+.details__panel {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--details-border);
+  border-radius: var(--panel-radius);
+  padding: 18px 20px;
+  backdrop-filter: blur(12px);
+}
+
+.details__panel-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 14px;
+  color: var(--details-text);
+  letter-spacing: 0.3px;
+}
+
+/* Abilities */
+.details__abilities {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.details__ability {
+  background: var(--color-bg);
+  border: 1px solid color-mix(in srgb, var(--color) 50%, transparent);
+  color: var(--color);
+  font-size: 22px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+.details__ability:hover {
+  background: color-mix(in srgb, var(--color) 20%, transparent);
+}
+
+/* Stats */
+.details__stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.details__stat:last-child {
+  margin-bottom: 0;
+}
+
+.details__stat-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Colores fijos para iconos de stat — igual que en la imagen de referencia */
+.stat--hp {
+  background: var(--type-fire);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--type-fire) 50%, transparent);
+}
+.stat--attack {
+  background: var(--type-electric);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--type-electric) 50%, transparent);
+}
+.stat--defense {
+  background: var(--type-water);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--type-water) 50%, transparent);
+}
+.stat--speed {
+  background: var(--type-electric);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--type-electric) 50%, transparent);
+}
+
+.details__stat-label {
+  font-size: 16px;
+  color: var(--details-muted);
+  width: 56px;
+  flex-shrink: 0;
+}
+
+.details__bar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.details__progress {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.details__progress.stat--hp {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--type-fire) 60%, #000) 0%,
+    var(--type-fire) 100%
+  );
+  box-shadow: 0 0 6px color-mix(in srgb, var(--type-fire) 50%, transparent);
+}
+.details__progress.stat--attack {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--type-electric) 60%, #000) 0%,
+    var(--type-electric) 100%
+  );
+  box-shadow: 0 0 6px color-mix(in srgb, var(--type-electric) 50%, transparent);
+}
+.details__progress.stat--defense {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--type-water) 60%, #000) 0%,
+    var(--type-water) 100%
+  );
+  box-shadow: 0 0 6px color-mix(in srgb, var(--type-water) 50%, transparent);
+}
+.details__progress.stat--speed {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--type-electric) 60%, #000) 0%,
+    var(--type-electric) 100%
+  );
+  box-shadow: 0 0 6px color-mix(in srgb, var(--type-electric) 50%, transparent);
+}
+
+.details__stat-value {
+  font-size: 17px;
+  color: var(--details-muted);
+  white-space: nowrap;
+  min-width: 54px;
+  text-align: right;
+}
+
+/* =============================================
+   RESPONSIVE — tablet (≤ 1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+  .details__layout {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    padding-top: 90px;
+  }
+
+  .details__artwork {
+    grid-column: 1 / -1;
+    order: -1;
+    height: 40vh;
+    min-height: 280px;
+  }
+
+  .details__image {
+    width: 260px;
+    height: 260px;
+  }
+
+  .details__left {
+    order: 1;
+  }
+  .details__right {
+    order: 2;
+  }
+}
+
+/* =============================================
+   RESPONSIVE — mobile (≤ 640px)
+   ============================================= */
+@media (max-width: 640px) {
+  .details__layout {
+    grid-template-columns: 1fr;
+    padding: 80px 16px 32px;
+    gap: 16px;
+  }
+
+  .details__artwork {
+    grid-column: 1;
+    height: 280px;
+  }
+
+  .details__image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .details__id-bg {
+    font-size: 100px;
+  }
+  .details__name {
+    font-size: 36px;
+  }
+
+  .details__measurements {
+    grid-template-columns: 1fr 1fr;
+  }
+}
