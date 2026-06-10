@@ -8,12 +8,16 @@ type Props = {
 
 function PokemonGridFavorites({ pokemons, viewMode }: Props) {
   return (
-    <section className="favorites-grid-section container">
+    <section className={`favorites-${viewMode}-section container`}>
       <div
         className={viewMode === "grid" ? "favorites-grid" : "favorites-list"}
       >
         {pokemons.map((pokemon) => (
-          <FavoriteCard key={pokemon.id} pokemon={pokemon} />
+          <FavoriteCard
+            key={pokemon.id}
+            pokemon={pokemon}
+            viewMode={viewMode}
+          />
         ))}
       </div>
     </section>

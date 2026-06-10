@@ -11,13 +11,12 @@ import { getPokemonFullDetails } from "../services/pokemonApi";
 function Favorites() {
   const { favorites } = useFavorites();
   const [pokemons, setPokemons] = useState<PokemonCardFavorites[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [viewMode, setVieawMode] = useState("list");
   const [error, setError] = useState("");
 
   useEffect(() => {
     async function loadPokemonsFavorites() {
       try {
-        setLoading(true);
         const data = await Promise.all(
           favorites.map(async (id) => {
             const pokemon = await getPokemonFullDetails(id);
@@ -30,8 +29,6 @@ function Favorites() {
         setPokemons(data);
       } catch {
         setError("ERRO CARGANDO POKEMONS");
-      } finally {
-        setLoading(false);
       }
     }
 
@@ -48,7 +45,7 @@ function Favorites() {
           primaryType={"fire"}
         />
 
-        <PokemonGridFavorites pokemons={pokemons} viewMode={"grid"} />
+        <PokemonGridFavorites pokemons={pokemons} viewMode={"list"} />
       </main>
     </>
   );

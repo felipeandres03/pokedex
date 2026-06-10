@@ -4,6 +4,20 @@
   margin-bottom: 4rem;
 }
 
+.favorites-list-section {
+  margin-top: 3rem;
+
+  margin-bottom: 4rem;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+/* ========================= */
+/* GRID VIEW                 */
+/* ========================= */
+
 .favorites-grid {
   display: grid;
 
@@ -12,10 +26,21 @@
   gap: 1.5rem;
 }
 
+/* ========================= */
+/* LIST VIEW                 */
+/* ========================= */
+
 .favorites-list {
-  display: flex;
+  width: 50%;
+}
 
-  flex-direction: column;
+/* ========================= */
+/* RESPONSIVE                */
+/* ========================= */
 
-  gap: 1rem;
+@media (max-width: 768px) {
+  .favorites-grid,
+  .favorites-list {
+    grid-template-columns: 1fr;
+  }
 }
