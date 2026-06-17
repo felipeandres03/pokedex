@@ -11,3 +11,63 @@
 
   background-attachment: fixed;
 }
+
+.favorites-view {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  margin-bottom: 2rem;
+}
+
+.favorites-view button {
+  width: 52px;
+
+  height: 52px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.favorites-view button img {
+  width: 24px;
+
+  height: 24px;
+
+  object-fit: contain;
+}
+
+.favorites-view button:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--color-primary);
+}
+
+.favorites-view button.active {
+  background: var(--color-primary);
+
+  border-color: var(--color-primary);
+
+  box-shadow: 0 0 20px rgba(237, 58, 58, 0.45);
+}
+
+.favorites-view button.active img {
+  transform: scale(1.05);
+}

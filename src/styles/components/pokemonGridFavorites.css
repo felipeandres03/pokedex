@@ -4,12 +4,14 @@
   margin-bottom: 4rem;
 }
 
-.favorites-list-section {
-  margin-top: 3rem;
+.favorites-list {
+  display: grid;
 
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(3, minmax(650px, 1fr));
 
-  display: flex;
+  margin-inline: auto;
+
+  gap: 1.5rem;
 
   justify-content: center;
 }
@@ -30,9 +32,9 @@
 /* LIST VIEW                 */
 /* ========================= */
 
-.favorites-list {
+/* .favorites-list {
   width: 50%;
-}
+} */
 
 /* ========================= */
 /* RESPONSIVE                */

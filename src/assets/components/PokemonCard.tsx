@@ -24,7 +24,7 @@ function PokemonCard({ pokemon }: Props) {
         <span className="pokemon-card__id">#{pokemon.id}</span>
 
         <button
-          className="pokemon-card__favorite"
+          className={`pokemon-card__favorite ${isFavorites(pokemon.id) ? "active" : ""}`}
           onClick={() => {
             isFavorites(pokemon.id)
               ? removeFavorites(pokemon.id)
@@ -33,7 +33,7 @@ function PokemonCard({ pokemon }: Props) {
         >
           <img
             className="favorite-icon"
-            src="public\icons\pokeball-pokemon-svgrepo-com.svg"
+            src="/icons/pokeball-pokemon-svgrepo-com.svg"
             alt="pokebola"
           />
         </button>

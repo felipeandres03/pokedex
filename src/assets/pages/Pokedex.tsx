@@ -117,6 +117,7 @@ function Pokedex() {
           }),
         );
         setPokemons(respuesta);
+        setError("");
       } catch {
         setError("ERROR TRAYENDO POKEMONS POR TIPO");
       } finally {
