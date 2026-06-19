@@ -4,7 +4,7 @@ import TeamPokemon from "../components/TeamPokemon";
 import PokemonGridFavorites from "../components/PokemonGridFavorites";
 import { transformPokemonFavorites } from "../services/transformers";
 import { useFavorites } from "../context/FavoritesContext";
-import { PokemonCardFavorites } from "../types/Pokemon";
+import { PokemonCardFavorites, teamSlot } from "../types/Pokemon";
 import { useEffect, useState } from "react";
 import { getPokemonFullDetails } from "../services/pokemonApi";
 
@@ -13,6 +13,7 @@ function Favorites() {
   const [pokemons, setPokemons] = useState<PokemonCardFavorites[]>([]);
   const [viewMode, setViewMode] = useState<"list" | "grid">("grid");
   const [error, setError] = useState("");
+  const [team, setTeam] = useState<teamSlot[]>(Array(8).fill(null));
 
   useEffect(() => {
     async function loadPokemonsFavorites() {
@@ -44,7 +45,7 @@ function Favorites() {
           powerTeam={1000}
           primaryType={"fire"}
         />
-        <TeamPokemon team={[]} />
+        <TeamPokemon team={team} />
         <section className="container">
           <div className="favorites-view">
             <button
