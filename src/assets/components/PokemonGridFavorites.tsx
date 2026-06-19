@@ -4,9 +4,10 @@ import FavoriteCard from "./FavoriteCard";
 type Props = {
   pokemons: PokemonCardFavorites[];
   viewMode: "grid" | "list";
+  addToTeam: (pokemon: PokemonCardFavorites) => void;
 };
 
-function PokemonGridFavorites({ pokemons, viewMode }: Props) {
+function PokemonGridFavorites({ pokemons, viewMode, addToTeam }: Props) {
   return (
     <section className={`favorites-${viewMode}-section container`}>
       <div
@@ -17,6 +18,7 @@ function PokemonGridFavorites({ pokemons, viewMode }: Props) {
             key={pokemon.id}
             pokemon={pokemon}
             viewMode={viewMode}
+            addToTeam={addToTeam}
           />
         ))}
       </div>

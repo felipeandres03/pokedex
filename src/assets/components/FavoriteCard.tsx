@@ -3,9 +3,10 @@ import { PokemonCardFavorites } from "../types/Pokemon";
 type Props = {
   pokemon: PokemonCardFavorites;
   viewMode: "grid" | "list";
+  addToTeam: (pokemon: PokemonCardFavorites) => void;
 };
 
-function FavoriteCard({ pokemon, viewMode }: Props) {
+function FavoriteCard({ pokemon, viewMode, addToTeam }: Props) {
   return (
     <article
       className={`
@@ -38,7 +39,9 @@ function FavoriteCard({ pokemon, viewMode }: Props) {
         </div>
 
         <div className="favorite-card__actions">
-          <button className="btn-team">Add Team</button>
+          <button className="btn-team" onClick={() => addToTeam(pokemon)}>
+            Add Team
+          </button>
 
           <button className="btn-remove">Remove</button>
         </div>

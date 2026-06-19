@@ -18,7 +18,7 @@ function TeamPokemon({ team, onRemoveFromTeam }: TeamPokemonProps) {
       <div className="team-grid">
         {team.map((pokemon, index) =>
           pokemon === null ? (
-            <TeamSlot pokemon={null} slotNumber={index + 1} />
+            <TeamSlot pokemon={null} slotNumber={index + 1} key={index} />
           ) : (
             <TeamSlot
               slotNumber={index + 1}

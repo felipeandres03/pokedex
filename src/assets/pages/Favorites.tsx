@@ -36,6 +36,35 @@ function Favorites() {
     loadPokemonsFavorites();
   }, [favorites]);
 
+  const onAddToTeam = (pokemon: PokemonCardFavorites) => {
+    setTeam((prev) => {
+      const empityIndex = prev.findIndex((slot) => slot === null);
+      if (empityIndex === -1) {
+        return prev;
+      }
+
+      const isAlreadyInTeam =
+        prev.findIndex((slot) => slot?.id === pokemon.id) !== -1;
+      if (isAlreadyInTeam) {
+        return prev;
+      }
+      const newTeam = [...prev];
+      newTeam[empityIndex] = pokemon;
+      return newTeam;
+    });
+  };
+
+  const onRemoveFromTeam = (id: number) => {
+    const isInTeam = team.findIndex((slot) => slot?.id === id);
+    if (isInTeam !== -1) {
+      setTeam((prev) => {
+        const newteam = [...prev];
+        newteam[isInTeam] = null;
+        return newteam;
+      });
+    }
+  };
+
   return (
     <>
       <main className="favorites-page">
@@ -45,7 +74,7 @@ function Favorites() {
           powerTeam={1000}
           primaryType={"fire"}
         />
-        <TeamPokemon team={team} />
+        <TeamPokemon team={team} onRemoveFromTeam={onRemoveFromTeam} />
         <section className="container">
           <div className="favorites-view">
             <button
@@ -66,7 +95,11 @@ function Favorites() {
             </button>
           </div>
         </section>
-        <PokemonGridFavorites pokemons={pokemons} viewMode={viewMode} />
+        <PokemonGridFavorites
+          pokemons={pokemons}
+          viewMode={viewMode}
+          addToTeam={onAddToTeam}
+        />
       </main>
     </>
   );
