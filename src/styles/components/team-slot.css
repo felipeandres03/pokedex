@@ -1,0 +1,29 @@
+.team-slot {
+  position: relative;
+
+  height: 320px;
+
+  background: linear-gradient(145deg, #1b2230, #131a24);
+
+  border: 2px solid #2d3748;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+
+.team-slot:hover {
+  transform: translateY(-4px);
+
+  border-color: #475569;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}

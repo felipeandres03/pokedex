@@ -112,3 +112,5 @@ export type PokemonCardFavorites = {
   types: string[];
   power: number;
 };
+
+export type teamSlot = PokemonCardFavorites | null;

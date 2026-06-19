@@ -11,7 +11,7 @@ import { getPokemonFullDetails } from "../services/pokemonApi";
 function Favorites() {
   const { favorites } = useFavorites();
   const [pokemons, setPokemons] = useState<PokemonCardFavorites[]>([]);
-  const [viewMode, setVieawMode] = useState<"list" | "grid">("grid");
+  const [viewMode, setViewMode] = useState<"list" | "grid">("grid");
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -44,12 +44,13 @@ function Favorites() {
           powerTeam={1000}
           primaryType={"fire"}
         />
+        <TeamPokemon team={[]} />
         <section className="container">
           <div className="favorites-view">
             <button
               className={viewMode === "grid" ? "active" : ""}
               onClick={() => {
-                setVieawMode("grid");
+                setViewMode("grid");
               }}
             >
               <img src="/icons/grid-icon.svg" alt="grid" />
@@ -57,7 +58,7 @@ function Favorites() {
             <button
               className={viewMode === "list" ? "active" : ""}
               onClick={() => {
-                setVieawMode("list");
+                setViewMode("list");
               }}
             >
               <img src="/icons/list-icon.svg" alt="list" />
