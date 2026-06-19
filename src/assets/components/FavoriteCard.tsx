@@ -27,7 +27,10 @@ function FavoriteCard({ pokemon, viewMode, addToTeam }: Props) {
 
         <div className="favorite-card__types">
           {pokemon.types.map((type) => (
-            <span key={type} className={`type-badge type-${type}`}>
+            <span
+              key={type}
+              className={`type-badge pokemon-card__type pokemon-card__type--${type}`}
+            >
               {type}
             </span>
           ))}
@@ -39,11 +42,11 @@ function FavoriteCard({ pokemon, viewMode, addToTeam }: Props) {
         </div>
 
         <div className="favorite-card__actions">
-          <button className="btn-team" onClick={() => addToTeam(pokemon)}>
+          <button className="btn-add-team" onClick={() => addToTeam(pokemon)}>
             Add Team
           </button>
 
-          <button className="btn-remove">Remove</button>
+          <button className="btn-remove-team">Remove</button>
         </div>
       </div>
     </article>

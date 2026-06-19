@@ -1,6 +1,10 @@
-function HeroFavorites() {
+type HeroFavoritesProps = {
+  primaryType: string;
+};
+
+function HeroFavorites({ primaryType }: HeroFavoritesProps) {
   return (
-    <section className="favorites-hero">
+    <section className={`favorites-hero background-hero-type-${primaryType}`}>
       <div className="favorites-hero__overlay"></div>
 
       <div className="container favorites-hero__container">

@@ -14,6 +14,7 @@ function Favorites() {
   const [viewMode, setViewMode] = useState<"list" | "grid">("grid");
   const [error, setError] = useState("");
   const [team, setTeam] = useState<teamSlot[]>(Array(8).fill(null));
+  const [primaryTypeTeam, setPrimaryTypeTeam] = useState("poison");
 
   useEffect(() => {
     async function loadPokemonsFavorites() {
@@ -67,12 +68,12 @@ function Favorites() {
 
   return (
     <>
-      <main className="favorites-page">
-        <HeroFavorites />
+      <main className={`favorites-page  backgraund-type-${primaryTypeTeam}`}>
+        <HeroFavorites primaryType={primaryTypeTeam} />
         <StatsTeam
           favorites={favorites.length}
           powerTeam={1000}
-          primaryType={"fire"}
+          primaryType={primaryTypeTeam}
         />
         <TeamPokemon team={team} onRemoveFromTeam={onRemoveFromTeam} />
         <section className="container">

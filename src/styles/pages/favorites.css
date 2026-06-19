@@ -1,10 +1,199 @@
 .favorites-page {
   min-height: 100vh;
+}
 
+/*----- TYPES BACKGRAUNDS-------  */
+.backgraund-type-fire {
   background:
-    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.95)),
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
     url("../images/backgraunds-favorites/backgraund-fire.jpeg");
+  background-size: cover;
 
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-water {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-water.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-normal {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-normal.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-electric {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-electric.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-figthing {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-figthing.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-poison {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-poison.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-bug {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-bug.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-dark {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-dark.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-grass {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-grass.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-flying {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-flying.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-dragon {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-dragon.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-fayri {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-fayri.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-ghost {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-ghost.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-psiquy {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-psiquy.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-ground {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-ground.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-ice {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-ice.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-rock {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-rock.jpeg");
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.backgraund-type-steel {
+  background:
+    linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
+    url("../images/backgraunds-favorites/backgraund-steel.jpeg");
   background-size: cover;
 
   background-position: center;

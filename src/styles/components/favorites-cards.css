@@ -134,24 +134,26 @@
   transition: 0.2s;
 }
 
-.btn-team {
-  background: rgba(38, 38, 192, 0.897);
+.btn-add-team {
+  background: rgba(38, 38, 192, 0.856);
 
   color: white;
 }
 
-.btn-team:hover {
+.btn-add-team:hover {
+  background-color: rgb(0, 0, 255);
   transform: translateY(-2px);
 }
 
-.btn-remove {
+.btn-remove-team {
   background: var(--color-primary);
 
   color: white;
 }
 
-.btn-remove:hover {
+.btn-remove-team:hover {
   background: rgba(236, 5, 5, 0.486);
+  transform: translateY(-2px);
 }
 
 /* TYPES  */
@@ -188,11 +190,11 @@
 .pokemon-card__type---electric {
   background: linear-gradient(
     180deg,
-    rgba(250, 204, 21, 0.3),
-    rgba(248, 244, 14, 0.253)
+    rgba(250, 204, 21, 0.589),
+    rgba(248, 244, 14, 0.219)
   );
 
-  border-color: rgba(250, 204, 21, 0.35);
+  border-color: rgb(250, 204, 21);
   color: white;
 }
 
@@ -223,7 +225,7 @@
     rgba(15, 15, 20, 0.98)
   );
 
-  border-color: rgba(168, 162, 158, 0.3);
+  border-color: rgba(168, 162, 158, 0.432);
 }
 
 .pokemon-card__type---bug {
@@ -259,11 +261,11 @@
 .pokemon-card__type---steel {
   background: linear-gradient(
     180deg,
-    rgba(148, 163, 184, 0.28),
+    rgba(148, 163, 184, 0.568),
     rgba(146, 146, 172, 0.336)
   );
 
-  border-color: rgba(148, 163, 184, 0.35);
+  border-color: rgba(148, 163, 184, 0.651);
 
   color: black;
 }
@@ -271,11 +273,11 @@
 .pokemon-card__type---ice {
   background: linear-gradient(
     180deg,
-    rgba(103, 232, 249, 0.28),
+    rgba(103, 232, 249, 0.493),
     rgba(15, 15, 20, 0.98)
   );
 
-  border-color: rgba(103, 232, 249, 0.35);
+  border-color: rgba(103, 232, 249, 0.692);
 
   color: black;
 }
@@ -306,27 +308,27 @@
   background: linear-gradient(
     180deg,
     rgba(202, 139, 4, 0.822),
-    rgba(104, 66, 9, 0.39)
+    rgba(104, 66, 9, 0.74)
   );
 
-  border-color: rgba(202, 138, 4, 0.35);
+  border-color: rgba(202, 139, 4, 0.61);
 }
 
 .pokemon-card__type---rock {
   background: linear-gradient(
     180deg,
-    rgba(161, 98, 7, 0.28),
-    rgba(37, 26, 10, 0.281)
+    rgba(161, 97, 7, 0.63),
+    rgba(37, 26, 10, 0.685)
   );
 
-  border-color: rgba(161, 98, 7, 0.35);
+  border-color: rgba(161, 97, 7, 0.788);
 }
 
 .pokemon-card__type---dragon {
   background: linear-gradient(
     180deg,
     rgba(124, 58, 237, 0.32),
-    rgba(15, 15, 20, 0.329)
+    rgba(15, 15, 20, 0.589)
   );
 
   border-color: rgba(124, 58, 237, 0.4);
@@ -335,7 +337,7 @@
 .pokemon-card__type---dark {
   background: linear-gradient(
     180deg,
-    rgba(39, 39, 42, 0.55),
+    rgba(39, 39, 42, 0.822),
     rgba(15, 15, 20, 0.98)
   );
 
@@ -445,7 +447,7 @@
 
   object-fit: contain;
 
-  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.747));
 }
 
 .favorite-card--list .favorite-card__content {

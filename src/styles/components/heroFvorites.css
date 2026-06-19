@@ -10,7 +10,10 @@
   padding: 2rem 0;
 
   margin-top: 3rem;
+}
+/*----- TYPES BACKGRAUNDS-------  */
 
+.background-hero-type-fire {
   background-image: url("../images/backgraunds-favorites/backgraund-fire.jpeg");
 
   background-size: cover;
@@ -18,17 +21,141 @@
   background-position: bottom;
 }
 
-/* .favorites-hero__overlay {
-  position: absolute;
+.background-hero-type-bug {
+  background-image: url("../images/backgraunds-favorites/backgraund-bug.jpeg");
 
-  inset: 0;
+  background-size: cover;
 
-  background: radial-gradient(
-    circle at right,
-    rgba(255, 80, 80, 0.473),
-    transparent 40%
-  );
-} */
+  background-position: bottom;
+}
+
+.background-hero-type-dark {
+  background-image: url("../images/backgraunds-favorites/backgraund-dark.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-dragon {
+  background-image: url("../images/backgraunds-favorites/backgraund-dragon.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-electric {
+  background-image: url("../images/backgraunds-favorites/backgraund-electric.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-fayri {
+  background-image: url("../images/backgraunds-favorites/backgraund-fayri.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-figthing {
+  background-image: url("../images/backgraunds-favorites/backgraund-figthing.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-flying {
+  background-image: url("../images/backgraunds-favorites/backgraund-flying.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-ghost {
+  background-image: url("../images/backgraunds-favorites/backgraund-ghost.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-grass {
+  background-image: url("../images/backgraunds-favorites/backgraund-grass.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-ground {
+  background-image: url("../images/backgraunds-favorites/backgraund-ground.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-ice {
+  background-image: url("../images/backgraunds-favorites/backgraund-ice.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-normal {
+  background-image: url("../images/backgraunds-favorites/backgraund-normal.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-poison {
+  background-image: url("../images/backgraunds-favorites/backgraund-poison.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-psiquy {
+  background-image: url("../images/backgraunds-favorites/backgraund-psiquy.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-rock {
+  background-image: url("../images/backgraunds-favorites/backgraund-rock.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-steel {
+  background-image: url("../images/backgraunds-favorites/backgraund-steel.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
+
+.background-hero-type-water {
+  background-image: url("../images/backgraunds-favorites/backgraund-water.jpeg");
+
+  background-size: cover;
+
+  background-position: bottom;
+}
 
 .favorites-hero__container {
   position: relative;

@@ -26,7 +26,7 @@ function Hero({ handleSearch }: Props) {
       {/* RIGHT CONTENT */}
       <article className="hero__image">
         <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/644.png"
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/644.png`}
           alt="Pokemon"
         />
       </article>
