@@ -18,7 +18,7 @@ function StatsTeam({ favorites, powerTeam, primaryType }: Props) {
       </article>
 
       <article className="stats-team__card">
-        <img src={`/icons/${primaryType}-svgrepo-com.svg`} alt="type icon" />
+        <img src={`/icons/${primaryType}-icon.svg`} alt="type icon" />
 
         <div className="stats-team__info">
           <span>Main Type</span>

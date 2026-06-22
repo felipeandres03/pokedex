@@ -3,7 +3,7 @@ import TeamSlot from "./TeamSlot";
 
 type TeamPokemonProps = {
   team: teamSlot[];
-  onRemoveFromTeam?: (id: number) => void;
+  onRemoveFromTeam: (id: number) => void;
 };
 
 function TeamPokemon({ team, onRemoveFromTeam }: TeamPokemonProps) {
@@ -18,7 +18,12 @@ function TeamPokemon({ team, onRemoveFromTeam }: TeamPokemonProps) {
       <div className="team-grid">
         {team.map((pokemon, index) =>
           pokemon === null ? (
-            <TeamSlot pokemon={null} slotNumber={index + 1} key={index} />
+            <TeamSlot
+              pokemon={null}
+              slotNumber={index + 1}
+              key={index}
+              onRemove={onRemoveFromTeam}
+            />
           ) : (
             <TeamSlot
               slotNumber={index + 1}

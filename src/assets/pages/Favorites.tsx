@@ -14,7 +14,8 @@ function Favorites() {
   const [viewMode, setViewMode] = useState<"list" | "grid">("grid");
   const [error, setError] = useState("");
   const [team, setTeam] = useState<teamSlot[]>(Array(8).fill(null));
-  const [primaryTypeTeam, setPrimaryTypeTeam] = useState("water ");
+  const [primaryTypeTeam, setPrimaryTypeTeam] = useState("fire");
+  const [powerBattleTeam, setPowerBattleTeam] = useState(0);
 
   useEffect(() => {
     async function loadPokemonsFavorites() {
@@ -72,7 +73,7 @@ function Favorites() {
         <HeroFavorites primaryType={primaryTypeTeam} />
         <StatsTeam
           favorites={favorites.length}
-          powerTeam={1000}
+          powerTeam={powerBattleTeam}
           primaryType={primaryTypeTeam}
         />
         <TeamPokemon team={team} onRemoveFromTeam={onRemoveFromTeam} />

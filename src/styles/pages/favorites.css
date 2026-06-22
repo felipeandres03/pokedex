@@ -49,10 +49,10 @@
   background-attachment: fixed;
 }
 
-.backgraund-type-figthing {
+.backgraund-type-fighting {
   background:
     linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
-    url("../images/backgraunds-favorites/backgraund-figthing.jpeg");
+    url("../images/backgraunds-favorites/backgraund-fighting.jpeg");
   background-size: cover;
 
   background-position: center;
