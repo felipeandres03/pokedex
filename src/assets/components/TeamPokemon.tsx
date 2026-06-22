@@ -1,4 +1,4 @@
-import { PokemonCardFavorites, teamSlot } from "../types/Pokemon";
+import { teamSlot } from "../types/Pokemon";
 import TeamSlot from "./TeamSlot";
 
 type TeamPokemonProps = {

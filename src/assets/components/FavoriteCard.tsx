@@ -1,4 +1,5 @@
 import { PokemonCardFavorites } from "../types/Pokemon";
+import { useFavorites } from "../context/FavoritesContext";
 
 type Props = {
   pokemon: PokemonCardFavorites;
@@ -7,6 +8,7 @@ type Props = {
 };
 
 function FavoriteCard({ pokemon, viewMode, addToTeam }: Props) {
+  const { isFavorites, removeFavorites } = useFavorites();
   return (
     <article
       className={`
@@ -46,7 +48,14 @@ function FavoriteCard({ pokemon, viewMode, addToTeam }: Props) {
             Add Team
           </button>
 
-          <button className="btn-remove-team">Remove</button>
+          <button
+            className="btn-remove-team"
+            onClick={() => {
+              isFavorites(pokemon.id) ? removeFavorites(pokemon.id) : null;
+            }}
+          >
+            Remove
+          </button>
         </div>
       </div>
     </article>

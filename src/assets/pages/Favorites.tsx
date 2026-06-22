@@ -14,7 +14,7 @@ function Favorites() {
   const [viewMode, setViewMode] = useState<"list" | "grid">("grid");
   const [error, setError] = useState("");
   const [team, setTeam] = useState<teamSlot[]>(Array(8).fill(null));
-  const [primaryTypeTeam, setPrimaryTypeTeam] = useState("poison");
+  const [primaryTypeTeam, setPrimaryTypeTeam] = useState("water ");
 
   useEffect(() => {
     async function loadPokemonsFavorites() {
