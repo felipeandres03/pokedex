@@ -1,7 +1,7 @@
 type Props = {
   favorites: number;
   powerTeam: number;
-  primaryType: string;
+  primaryType: string | null;
 };
 
 function StatsTeam({ favorites, powerTeam, primaryType }: Props) {

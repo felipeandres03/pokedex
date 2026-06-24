@@ -20,7 +20,12 @@ function TeamSlot({ pokemon, onRemove, slotNumber }: TeamSlotProps) {
           {slotNumber.toString().padStart(2, "0")}
         </div>
 
-        <button className="remove-button" onClick={() => onRemove(pokemon.id)}>
+        <button
+          className="remove-button"
+          onClick={() => {
+            onRemove(pokemon.id);
+          }}
+        >
           ✕
         </button>
 

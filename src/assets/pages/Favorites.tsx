@@ -14,7 +14,6 @@ function Favorites() {
   const [viewMode, setViewMode] = useState<"list" | "grid">("grid");
   const [error, setError] = useState("");
   const [team, setTeam] = useState<teamSlot[]>(Array(8).fill(null));
-  const [primaryTypeTeam, setPrimaryTypeTeam] = useState("fire");
   const [powerBattleTeam, setPowerBattleTeam] = useState(0);
 
   useEffect(() => {
@@ -38,6 +37,38 @@ function Favorites() {
     loadPokemonsFavorites();
   }, [favorites]);
 
+  function getPrimaryType() {
+    const validPokemons = team.filter(
+      (pokemon): pokemon is PokemonCardFavorites => pokemon !== null,
+    );
+
+    if (validPokemons.length === 0) {
+      return null;
+    }
+
+    const typeCount: Record<string, number> = {};
+
+    validPokemons.forEach((pokemon) => {
+      pokemon.types.forEach((type) => {
+        typeCount[type] = (typeCount[type] || 0) + 1;
+      });
+    });
+
+    let primaryType = "normal";
+    let maxCount = 0;
+
+    Object.entries(typeCount).forEach(([type, count]) => {
+      if (count > maxCount) {
+        maxCount = count;
+        primaryType = type;
+      }
+    });
+
+    return primaryType;
+  }
+
+  const primaryType = getPrimaryType();
+
   const onAddToTeam = (pokemon: PokemonCardFavorites) => {
     setTeam((prev) => {
       const empityIndex = prev.findIndex((slot) => slot === null);
@@ -52,6 +83,7 @@ function Favorites() {
       }
       const newTeam = [...prev];
       newTeam[empityIndex] = pokemon;
+      setPowerBattleTeam(powerBattleTeam + pokemon.power);
       return newTeam;
     });
   };
@@ -59,6 +91,9 @@ function Favorites() {
   const onRemoveFromTeam = (id: number) => {
     const isInTeam = team.findIndex((slot) => slot?.id === id);
     if (isInTeam !== -1) {
+      team[isInTeam]?.power === undefined
+        ? null
+        : setPowerBattleTeam(powerBattleTeam - team[isInTeam]?.power);
       setTeam((prev) => {
         const newteam = [...prev];
         newteam[isInTeam] = null;
@@ -69,12 +104,16 @@ function Favorites() {
 
   return (
     <>
-      <main className={`favorites-page  backgraund-type-${primaryTypeTeam}`}>
-        <HeroFavorites primaryType={primaryTypeTeam} />
+      <main
+        className={`favorites-page  backgraund-type-${primaryType === null ? "normal" : primaryType}`}
+      >
+        <HeroFavorites
+          primaryType={primaryType === null ? "normal" : primaryType}
+        />
         <StatsTeam
           favorites={favorites.length}
           powerTeam={powerBattleTeam}
-          primaryType={primaryTypeTeam}
+          primaryType={primaryType === null ? "normal" : primaryType}
         />
         <TeamPokemon team={team} onRemoveFromTeam={onRemoveFromTeam} />
         <section className="container">

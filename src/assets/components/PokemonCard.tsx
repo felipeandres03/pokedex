@@ -24,7 +24,7 @@ function PokemonCard({ pokemon }: Props) {
         <span className="pokemon-card__id">#{pokemon.id}</span>
 
         <button
-          className={`pokemon-card__favorite ${isFavorites(pokemon.id) ? "active" : ""}`}
+          className={`pokemon-card__favorite ${isFavorites(pokemon.id) ? "active-favorites" : ""}`}
           onClick={() => {
             isFavorites(pokemon.id)
               ? removeFavorites(pokemon.id)

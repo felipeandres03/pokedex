@@ -1,5 +1,5 @@
 type HeroFavoritesProps = {
-  primaryType: string;
+  primaryType: string | null;
 };
 
 function HeroFavorites({ primaryType }: HeroFavoritesProps) {

@@ -44,7 +44,12 @@ function FavoriteCard({ pokemon, viewMode, addToTeam }: Props) {
         </div>
 
         <div className="favorite-card__actions">
-          <button className="btn-add-team" onClick={() => addToTeam(pokemon)}>
+          <button
+            className="btn-add-team"
+            onClick={() => {
+              addToTeam(pokemon);
+            }}
+          >
             Add Team
           </button>
 
