@@ -114,3 +114,12 @@ export type PokemonCardFavorites = {
 };
 
 export type teamSlot = PokemonCardFavorites | null;
+
+export type generationResponse = {
+  pokemon_species: [
+    {
+      name: string;
+      url: string;
+    },
+  ];
+};

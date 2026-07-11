@@ -1,0 +1,422 @@
+/*==========================================================
+                    TYPE BADGES
+==========================================================*/
+
+.pokemon-card__type {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  color: white;
+  transition: var(--transition-fast);
+}
+
+.pokemon-card__type:hover {
+  transform: translateY(-2px);
+}
+
+/*==========================================================
+                FIRE
+==========================================================*/
+
+.pokemon-card--fire {
+  background: linear-gradient(
+    145deg,
+    rgba(249, 115, 22, 0.95),
+    rgba(185, 28, 28, 0.95)
+  );
+}
+
+.pokemon-card__type--fire {
+  background: rgb(249, 116, 22);
+  border-color: var(--type-fire);
+}
+
+/*==========================================================
+                WATER
+==========================================================*/
+
+.pokemon-card--water {
+  background: linear-gradient(
+    145deg,
+    rgba(56, 189, 248, 0.95),
+    rgba(3, 105, 161, 0.95)
+  );
+}
+
+.pokemon-card__type--water {
+  background: rgb(0, 42, 255);
+  border-color: var(--type-water);
+}
+
+/*==========================================================
+                GRASS
+==========================================================*/
+
+.pokemon-card--grass {
+  background: linear-gradient(
+    145deg,
+    rgba(34, 197, 94, 0.95),
+    rgba(21, 128, 61, 0.95)
+  );
+}
+
+.pokemon-card__type--grass {
+  background: rgb(28, 193, 89);
+  border-color: var(--type-grass);
+}
+
+/*==========================================================
+                ELECTRIC
+==========================================================*/
+
+.pokemon-card--electric {
+  background: linear-gradient(
+    145deg,
+    rgba(250, 204, 21, 0.95),
+    rgba(202, 138, 4, 0.95)
+  );
+
+  color: #111;
+}
+
+.pokemon-card__type--electric {
+  background: rgb(246, 250, 21);
+  border-color: var(--type-electric);
+}
+
+/*==========================================================
+                PSYCHIC
+==========================================================*/
+
+.pokemon-card--psychic {
+  background: linear-gradient(
+    145deg,
+    rgba(236, 72, 153, 0.95),
+    rgba(190, 24, 93, 0.95)
+  );
+}
+
+.pokemon-card__type--psychic {
+  background: rgb(236, 72, 154);
+  border-color: var(--type-psychic);
+}
+
+/*==========================================================
+                GHOST
+==========================================================*/
+
+.pokemon-card--ghost {
+  background: linear-gradient(
+    145deg,
+    rgba(139, 92, 246, 0.95),
+    rgba(91, 33, 182, 0.95)
+  );
+}
+
+.pokemon-card__type--ghost {
+  background: rgb(178, 67, 230);
+  border-color: var(--type-ghost);
+}
+
+/*==========================================================
+                NORMAL
+==========================================================*/
+
+.pokemon-card--normal {
+  background: linear-gradient(145deg, #9ca3af, #6b7280);
+}
+
+.pokemon-card__type--normal {
+  background: rgb(168, 162, 158);
+  border-color: var(--type-normal);
+}
+
+/*==========================================================
+                BUG
+==========================================================*/
+
+.pokemon-card--bug {
+  background: linear-gradient(
+    145deg,
+    rgba(132, 204, 22, 0.95),
+    rgba(77, 124, 15, 0.95)
+  );
+}
+
+.pokemon-card__type--bug {
+  background: rgb(131, 204, 22);
+  border-color: var(--type-bug);
+}
+
+/*==========================================================
+                FIGHTING
+==========================================================*/
+
+.pokemon-card--fighting {
+  background: linear-gradient(
+    145deg,
+    rgba(220, 38, 38, 0.95),
+    rgba(127, 29, 29, 0.95)
+  );
+}
+
+.pokemon-card__type--fighting {
+  background: rgb(220, 38, 38);
+  border-color: var(--type-fighting);
+}
+
+/*==========================================================
+                FLYING
+==========================================================*/
+
+.pokemon-card--flying {
+  background: linear-gradient(
+    145deg,
+    rgba(96, 165, 250, 0.95),
+    rgba(37, 99, 235, 0.95)
+  );
+}
+
+.pokemon-card__type--flying {
+  background: rgb(96, 165, 250);
+  border-color: var(--type-flying);
+}
+
+/*==========================================================
+                STEEL
+==========================================================*/
+
+.pokemon-card--steel {
+  background: linear-gradient(
+    145deg,
+    rgba(148, 163, 184, 0.95),
+    rgba(71, 85, 105, 0.95)
+  );
+}
+
+.pokemon-card__type--steel {
+  background: rgb(148, 163, 184);
+  border-color: var(--type-steel);
+}
+
+/*==========================================================
+                ICE
+==========================================================*/
+
+.pokemon-card--ice {
+  background: linear-gradient(
+    145deg,
+    rgba(103, 232, 249, 0.95),
+    rgba(14, 165, 233, 0.95)
+  );
+
+  color: #111;
+}
+
+.pokemon-card__type--ice {
+  background: rgb(103, 232, 249);
+  border-color: var(--type-ice);
+  color: #111;
+}
+
+/*==========================================================
+                POISON
+==========================================================*/
+
+.pokemon-card--poison {
+  background: linear-gradient(
+    145deg,
+    rgba(168, 85, 247, 0.95),
+    rgba(126, 34, 206, 0.95)
+  );
+}
+
+.pokemon-card__type--poison {
+  background: rgb(169, 85, 247);
+  border-color: var(--type-poison);
+}
+
+/*==========================================================
+                FAIRY
+==========================================================*/
+
+.pokemon-card--fairy {
+  background: linear-gradient(
+    145deg,
+    rgba(249, 168, 212, 0.95),
+    rgba(236, 72, 153, 0.95)
+  );
+
+  color: #111;
+}
+
+.pokemon-card__type--fairy {
+  background: rgb(249, 168, 212);
+  border-color: var(--type-fairy);
+}
+
+/*==========================================================
+                GROUND
+==========================================================*/
+
+.pokemon-card--ground {
+  background: linear-gradient(
+    145deg,
+    rgba(202, 138, 4, 0.95),
+    rgba(120, 53, 15, 0.95)
+  );
+}
+
+.pokemon-card__type--ground {
+  background: rgb(202, 139, 4);
+  border-color: var(--type-ground);
+}
+
+/*==========================================================
+                ROCK
+==========================================================*/
+
+.pokemon-card--rock {
+  background: linear-gradient(
+    145deg,
+    rgba(161, 98, 7, 0.95),
+    rgba(120, 53, 15, 0.95)
+  );
+}
+
+.pokemon-card__type--rock {
+  background: rgb(161, 97, 7);
+  border-color: var(--type-rock);
+}
+
+/*==========================================================
+                DRAGON
+==========================================================*/
+
+.pokemon-card--dragon {
+  background: linear-gradient(
+    145deg,
+    rgba(124, 58, 237, 0.95),
+    rgba(67, 56, 202, 0.95)
+  );
+}
+
+.pokemon-card__type--dragon {
+  background: rgb(124, 58, 237);
+  border-color: var(--type-dragon);
+}
+
+/*==========================================================
+                DARK
+==========================================================*/
+
+.pokemon-card--dark {
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0.95),
+    rgba(15, 23, 42, 0.95)
+  );
+}
+
+.pokemon-card__type--dark {
+  background: rgba(0, 0, 0, 0.878);
+  border-color: var(--type-dark);
+}
+
+.type-fire {
+  background: rgba(249, 115, 22, 0.18);
+  border-color: var(--type-fire);
+}
+
+.type-water {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: var(--type-water);
+}
+
+.type-grass {
+  background: rgba(34, 197, 94, 0.18);
+  border-color: var(--type-grass);
+}
+
+.type-electric {
+  background: rgba(250, 204, 21, 0.18);
+  border-color: var(--type-electric);
+}
+
+.type-bug {
+  background: rgba(132, 204, 22, 0.18);
+  border-color: var(--type-bug);
+}
+
+.type-ice {
+  background: rgba(103, 232, 249, 0.18);
+  border-color: var(--type-ice);
+}
+
+.type-poison {
+  background: rgba(168, 85, 247, 0.18);
+  border-color: var(--type-poison);
+}
+
+.type-ground {
+  background: rgba(202, 138, 4, 0.18);
+  border-color: var(--type-ground);
+}
+
+.type-rock {
+  background: rgba(161, 98, 7, 0.18);
+  border-color: var(--type-rock);
+}
+
+.type-ghost {
+  background: rgba(139, 92, 246, 0.18);
+  border-color: var(--type-ghost);
+}
+
+.type-dragon {
+  background: rgba(124, 58, 237, 0.18);
+  border-color: var(--type-dragon);
+}
+
+.type-dark {
+  background: rgba(51, 65, 85, 0.25);
+  border-color: var(--type-dark);
+}
+
+.type-fairy {
+  background: rgba(249, 168, 212, 0.18);
+  border-color: var(--type-fairy);
+}
+
+.type-psychic {
+  background: rgba(236, 72, 153, 0.18);
+  border-color: var(--type-psychic);
+}
+
+.type-fighting {
+  background: rgba(220, 38, 38, 0.18);
+  border-color: var(--type-fighting);
+}
+
+.type-flying {
+  background: rgba(96, 165, 250, 0.18);
+  border-color: var(--type-flying);
+}
+
+.type-steel {
+  background: rgba(148, 163, 184, 0.18);
+  border-color: var(--type-steel);
+}
+
+.type-normal {
+  background: rgba(168, 162, 158, 0.18);
+  border-color: var(--type-normal);
+}

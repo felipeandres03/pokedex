@@ -1,4 +1,5 @@
 import HeroFavorites from "../components/HeroFavorites";
+import NavBar from "../components/NavBar";
 import StatsTeam from "../components/StatsTeam";
 import TeamPokemon from "../components/TeamPokemon";
 import PokemonGridFavorites from "../components/PokemonGridFavorites";
@@ -104,6 +105,7 @@ function Favorites() {
 
   return (
     <>
+      <NavBar />
       <main
         className={`favorites-page  backgraund-type-${primaryType === null ? "normal" : primaryType}`}
       >
@@ -116,7 +118,7 @@ function Favorites() {
           primaryType={primaryType === null ? "normal" : primaryType}
         />
         <TeamPokemon team={team} onRemoveFromTeam={onRemoveFromTeam} />
-        <section className="container">
+        <section className="container favorites-selec-grid">
           <div className="favorites-view">
             <button
               className={viewMode === "grid" ? "active" : ""}
@@ -136,6 +138,7 @@ function Favorites() {
             </button>
           </div>
         </section>
+
         <PokemonGridFavorites
           pokemons={pokemons}
           viewMode={viewMode}

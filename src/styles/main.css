@@ -1,6 +1,7 @@
 @import "./base/reset.css";
 @import "./base/var.css";
 @import "./base/global.css";
+@import "./base/pokemon-types.css";
 @import "./layout/navbar.css";
 @import "./layout/footer.css";
 @import "./layout/container.css";
@@ -12,7 +13,6 @@
 @import "./components/loader.css";
 @import "./components/button.css";
 @import "./components/pokemon-details.css";
-@import "./components/bartype.css";
 @import "./components/heroFvorites.css";
 @import "./components/statsTeam.css";
 @import "./pages/favorites.css";
@@ -20,3 +20,9 @@
 @import "./components/pokemonGridFavorites.css";
 @import "./components/favorites-cards.css";
 @import "./components/teamSlot.css";
+@import "./components/exploreSection.css";
+@import "./components/scrollBar.css";
+@import "./components/filterpanel.css";
+@import "./components/databaseNavigation.css";
+@import "./pages/home.css";
+@import "./pages/pokedex.css";

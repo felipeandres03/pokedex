@@ -2,6 +2,7 @@ import {
   BasicResponseAPI,
   PokemonDetailsResponse,
   ResponseDetailsPokemon,
+  generationResponse,
 } from "../types/Pokemon";
 
 const urlBase = "https://pokeapi.co/api/v2";
@@ -68,6 +69,17 @@ export async function getpokemonsType(type: string) {
   const respuesta = await fetch(`${urlBase}/type/${type}`);
   if (!respuesta.ok) {
     throw new Error(`ERROR OBTENIENDO POKEMONS TIPO ${type}`);
+  }
+
+  return await respuesta.json();
+}
+
+export async function getPokemonsByGeneration(
+  generation: number,
+): Promise<generationResponse> {
+  const respuesta = await fetch(`${urlBase}/generation/${generation}`);
+  if (!respuesta.ok) {
+    throw new Error(`ERROR OBTENIENDO POKEMONS DE LA GENERACION ${generation}`);
   }
 
   return await respuesta.json();

@@ -14,25 +14,24 @@ function SearchBar({ handleSearch }: Props) {
   });
 
   return (
-    <section>
-      <form
-        className="searchbar"
-        onSubmit={() => {
-          event?.preventDefault();
-          handleSearch(inputValue);
-        }}
-      >
-        <input
-          className="searchbar__input"
-          id="input-search-pokemon"
-          type="text"
-          placeholder="Search pokemon by name or id"
-        />
-        <button className="searchbar__button" type="submit">
-          Search
-        </button>
-      </form>
-    </section>
+    <form
+      className="searchbar"
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSearch(inputValue);
+      }}
+    >
+      <input
+        className="searchbar__input"
+        type="text"
+        placeholder="Search Pokémon by name or id"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <button className="searchbar__button" type="submit">
+        Search
+      </button>
+    </form>
   );
 }
 

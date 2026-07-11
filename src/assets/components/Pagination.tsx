@@ -1,32 +1,21 @@
-import LoadMoreButton from "./LoadMoreButton";
-
 type Props = {
   handleNextPage: () => void;
   handleBackPage: () => void;
-  loadMorePokemons: () => void;
 };
 
-function Pagination({
-  handleBackPage,
-  handleNextPage,
-  loadMorePokemons,
-}: Props) {
+function Pagination({ handleBackPage, handleNextPage }: Props) {
   return (
-    <section className="pagination container">
-      <button
-        className="pagination__button  button-primary"
-        onClick={handleBackPage}
-      >
-        ← Previous
+    <section className="pagination">
+      <button className="pagination__button" onClick={handleBackPage}>
+        <span className="pagination__icon">◀</span>
+
+        <span>Previous</span>
       </button>
 
-      <LoadMoreButton loadMorePokemons={loadMorePokemons} />
+      <button className="pagination__button" onClick={handleNextPage}>
+        <span>Next</span>
 
-      <button
-        className="pagination__button  button-primary"
-        onClick={handleNextPage}
-      >
-        Next →
+        <span className="pagination__icon">▶</span>
       </button>
     </section>
   );

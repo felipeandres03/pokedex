@@ -112,11 +112,13 @@
 .details {
   position: relative;
   width: 100%;
-  max-height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   overflow: hidden;
   font-family: "Inter", sans-serif;
   color: var(--details-text);
   background: var(--details-bg);
+  margin: 0;
 }
 
 /* =============================================
@@ -210,10 +212,12 @@
   position: relative;
   z-index: 5;
   display: grid;
-  grid-template-columns: 280px 1fr 340px;
+  grid-template-columns: 240px minmax(350px, 1fr) 300px;
+  max-width: 1500px;
+  margin: auto;
   min-height: 94vh;
-  padding: 80px 28px 28px;
-  gap: 0 24px;
+  padding: 72px 2rem 2rem;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -235,7 +239,7 @@
   top: 60px;
   left: -16px;
   font-family: "Rajdhani", sans-serif;
-  font-size: clamp(100px, 14vw, 170px);
+  font-size: clamp(90px, 10vw, 130px);
   font-weight: 700;
   color: var(--color);
   opacity: 0.18;
@@ -260,7 +264,7 @@
 
 .details__name {
   font-family: "Rajdhani", sans-serif;
-  font-size: clamp(36px, 4vw, 58px);
+  font-size: clamp(32px, 3vw, 48px);
   font-weight: 700;
   line-height: 1;
   margin: 0 0 14px;
@@ -503,8 +507,8 @@
 
 .details__moon {
   position: absolute;
-  width: min(420px, 55vw);
-  height: min(420px, 55vw);
+  width: clamp(260px, 32vw, 390px);
+  height: clamp(260px, 32vw, 390px);
   border-radius: 50%;
   background: radial-gradient(circle, var(--color) 0%, transparent 70%);
   opacity: 0.2;
@@ -546,8 +550,8 @@
 .details__image {
   position: relative;
   z-index: 2;
-  width: min(600px, 52vw);
-  height: min(600px, 52vw);
+  width: clamp(260px, 34vw, 470px);
+  height: clamp(260px, 34vw, 470px);
   object-fit: contain;
   filter: drop-shadow(0 0 40px var(--color-glow))
     drop-shadow(0 0 80px var(--color-glow));
@@ -587,7 +591,7 @@
   background: rgba(0, 0, 0, 0.45);
   border: 1px solid var(--details-border);
   border-radius: var(--panel-radius);
-  padding: 16px 18px;
+  padding: 16px;
   backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
@@ -599,12 +603,12 @@
 }
 
 .details__meas-icon {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .details__meas-label {
   display: block;
-  font-size: 20px;
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--details-muted);
@@ -614,7 +618,7 @@
 .details__meas-value {
   display: block;
   font-family: "Rajdhani", sans-serif;
-  font-size: 22px;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--details-text);
 }
@@ -624,7 +628,7 @@
   background: rgba(0, 0, 0, 0.45);
   border: 1px solid var(--details-border);
   border-radius: var(--panel-radius);
-  padding: 18px 20px;
+  padding: 16px;
   backdrop-filter: blur(12px);
 }
 
@@ -662,7 +666,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 .details__stat:last-child {
   margin-bottom: 0;
@@ -760,7 +764,9 @@
    ============================================= */
 @media (max-width: 1024px) {
   .details__layout {
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr; */
+    align-items: center;
+    gap: 32px;
     grid-template-rows: auto auto;
     padding-top: 90px;
   }
@@ -773,8 +779,8 @@
   }
 
   .details__image {
-    width: 260px;
-    height: 260px;
+    width: 300px;
+    height: 300px;
   }
 
   .details__left {

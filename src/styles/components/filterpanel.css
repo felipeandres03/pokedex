@@ -1,0 +1,344 @@
+/*==========================================================
+FILTER PANEL (contenedor general)
+==========================================================*/
+
+.filter-panel {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 19, 31, 0.96),
+    rgba(8, 13, 22, 0.98)
+  );
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 30px rgba(255, 255, 255, 0.02),
+    0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Linea roja superior */
+.filter-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary),
+    transparent
+  );
+}
+
+/* Linea azul inferior */
+.filter-panel::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+  right: 40px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(80, 180, 255, 0.35),
+    transparent
+  );
+}
+
+.filter-panel__row {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.filter-panel__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.filter-panel__title img {
+  width: 50px;
+  height: 50px;
+  opacity: 0.9;
+}
+
+.filter-panel__content {
+  flex: 1;
+  min-width: 0; /* imprescindible para que el scroll interno funcione bien */
+}
+
+.filter-panel__divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+}
+
+@media (max-width: 900px) {
+  .filter-panel {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .filter-panel__row {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .filter-panel__title {
+    width: auto;
+  }
+}
+
+/*==========================================================
+SCROLLABLE FILTER ROW (scroll nativo + flechas + progreso)
+==========================================================*/
+
+.scroll-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.scroll-row__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.scroll-row__track {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  min-width: 0;
+  padding: 4px 2px;
+}
+
+.scroll-row__track::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-row__arrow {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
+}
+
+.scroll-row__arrow:hover {
+  background: rgba(255, 43, 77, 0.12);
+  border-color: var(--color-primary);
+}
+
+.scroll-row__arrow:active {
+  transform: scale(0.92);
+}
+
+.scroll-row__progress {
+  position: relative;
+  height: 2px;
+  margin: 0 36px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.scroll-row__progress-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary),
+    transparent
+  );
+  border-radius: 2px;
+}
+
+/*==========================================================
+BASE BUTTON (tipo y generación comparten esta base)
+Sin clip-path / polígonos: círculo simple, estable en
+cualquier resolución. El "glow up" viene del color y la luz,
+no de la forma.
+==========================================================*/
+
+.type-filter__button,
+.generation-filter__button {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.01)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s,
+    background 0.2s;
+}
+
+.type-filter__button img,
+.generation-filter__button img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.85;
+  transition:
+    opacity 0.2s,
+    filter 0.2s;
+}
+
+.type-filter__button:hover,
+.generation-filter__button:hover {
+  transform: translateY(-2px);
+  border-color: var(--btn-accent, var(--color-primary));
+  box-shadow: 0 0 14px -2px var(--btn-accent, rgba(255, 43, 77, 0.5));
+}
+
+.type-filter__button:hover img,
+.generation-filter__button:hover img {
+  opacity: 1;
+}
+
+.type-filter__button.active-filter,
+.generation-filter__button.active-filter {
+  border-color: var(--color-primary);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 43, 77, 0.18),
+    rgba(255, 43, 77, 0.04)
+  );
+  box-shadow:
+    0 0 18px rgba(255, 43, 77, 0.55),
+    inset 0 0 10px rgba(255, 43, 77, 0.2);
+}
+
+.type-filter__button.active-filter img,
+.generation-filter__button.active-filter img {
+  opacity: 1;
+}
+
+/*==========================================================
+ACENTO POR TIPO (solo afecta el hover, no el estado activo)
+==========================================================*/
+
+.type--normal {
+  --btn-accent: #a8a878;
+}
+.type--fire {
+  --btn-accent: #f08030;
+}
+.type--water {
+  --btn-accent: #6890f0;
+}
+.type--grass {
+  --btn-accent: #78c850;
+}
+.type--electric {
+  --btn-accent: #f8d030;
+}
+.type--ice {
+  --btn-accent: #98d8d8;
+}
+.type--fighting {
+  --btn-accent: #c03028;
+}
+.type--poison {
+  --btn-accent: #a040a0;
+}
+.type--ground {
+  --btn-accent: #e0c068;
+}
+.type--flying {
+  --btn-accent: #a890f0;
+}
+.type--psychic {
+  --btn-accent: #f85888;
+}
+.type--bug {
+  --btn-accent: #a8b820;
+}
+.type--rock {
+  --btn-accent: #b8a038;
+}
+.type--ghost {
+  --btn-accent: #705898;
+}
+.type--dragon {
+  --btn-accent: #7038f8;
+}
+.type--dark {
+  --btn-accent: #705848;
+}
+.type--steel {
+  --btn-accent: #b8b8d0;
+}
+.type--fairy {
+  --btn-accent: #ee99ac;
+}
+
+/*==========================================================
+RESPONSIVE BOTONES
+==========================================================*/
+
+@media (max-width: 900px) {
+  .type-filter__button,
+  .generation-filter__button {
+    width: 46px;
+    height: 46px;
+  }
+
+  .type-filter__button img,
+  .generation-filter__button img {
+    width: 18px;
+    height: 18px;
+  }
+}

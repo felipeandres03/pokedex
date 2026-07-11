@@ -13,7 +13,7 @@
 ========================================================= */
 
 .container-grid {
-  width: min(100% - 3rem, 1400px);
+  width: min(80% - 3rem, 1400px);
 
   margin-inline: auto;
 }

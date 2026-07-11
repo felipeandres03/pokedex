@@ -1,14 +1,12 @@
 import Home from "./assets/pages/Home";
 import Pokedex from "./assets/pages/Pokedex";
 import Favorites from "./assets/pages/Favorites";
-import NavBar from "./assets/components/NavBar";
 import PokemonDetails from "./assets/pages/PokemonDetails";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pokedex" element={<Pokedex />} />

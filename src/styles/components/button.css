@@ -1,37 +1,299 @@
-.button-primary {
-  height: 70px;
+/*==========================================================*
+ * BUTTON SYSTEM
+ *==========================================================*/
 
-  padding-inline: 2rem;
+.btn {
+  position: relative;
 
-  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
 
-  background: linear-gradient(135deg, #ef4444, #f1091c);
+  cursor: pointer;
 
-  color: white;
+  overflow: hidden;
 
-  font-size: 1rem;
+  border: none;
+  outline: none;
+
+  border-radius: 12px;
+
+  transition: 0.25s ease;
 
   font-weight: 700;
 
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-transform: uppercase;
 
-  box-shadow:
-    0 10px 30px rgba(239, 68, 68, 0.25),
-    0 0 20px rgba(236, 72, 153, 0.15);
-
-  transition: var(--transition-medium);
+  user-select: none;
 }
 
-.button-primary:hover {
-  transform: translateY(-4px);
+/*=========================================*
+ * TOP LIGHT
+ *=========================================*/
 
-  box-shadow:
-    0 15px 40px rgba(239, 68, 68, 0.35),
-    0 0 25px rgba(236, 72, 153, 0.25);
+.btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 24px;
+
+  right: 24px;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.85),
+    transparent
+  );
 }
 
-.button-primary:active {
+/*=========================================*
+ * SHINE
+ *=========================================*/
+
+.btn::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -90px;
+
+  width: 70px;
+
+  height: 100%;
+
+  transform: skewX(-25deg);
+
+  background: rgba(255, 255, 255, 0.15);
+
+  transition: 0.6s;
+}
+
+.btn:hover::after {
+  left: 120%;
+}
+
+/*=========================================*
+ * ACTIVE
+ *=========================================*/
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #ef4444, #d62828);
+
+  color: white;
+
+  box-shadow: 0 8px 18px rgba(239, 68, 68, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 28px rgba(239, 68, 68, 0.35);
+}
+
+.btn-outline {
+  background: linear-gradient(
+    180deg,
+    rgba(18, 28, 44, 0.95),
+    rgba(10, 18, 30, 0.98)
+  );
+
+  border: 1px solid rgba(73, 89, 114, 0.45);
+
+  color: white;
+}
+
+.btn-outline:hover {
+  border-color: rgba(239, 68, 68, 0.45);
+}
+
+.btn--small {
+  height: 42px;
+
+  padding: 0 1rem;
+
+  font-size: 0.8rem;
+}
+
+.btn--medium {
+  height: 52px;
+
+  padding: 0 1.5rem;
+
+  font-size: 0.9rem;
+}
+
+.btn--large {
+  height: 58px;
+
+  padding: 0 2rem;
+
+  font-size: 1rem;
+}
+
+/*==========================================================*
+ * LOAD MORE
+ *==========================================================*/
+
+.load-more {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: flex-start;
+
+  margin-top: 1rem;
+}
+
+/*==========================================================*
+ * BUTTON
+ *==========================================================*/
+
+.load-more__button {
+  width: 100%;
+
+  height: 56px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.8rem;
+
+  cursor: pointer;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: linear-gradient(180deg, #ef4444, #d62828);
+
+  color: white;
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  transition: 0.25s;
+
+  box-shadow: 0 8px 18px rgba(239, 68, 68, 0.25);
+}
+
+/*=========================================*
+ * TOP LIGHT
+ *=========================================*/
+
+.load-more__button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 25px;
+
+  right: 25px;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+/*=========================================*
+ * SHINE
+ *=========================================*/
+
+.load-more__button::after {
+  content: "";
+
+  position: absolute;
+
+  left: -120px;
+
+  top: 0;
+
+  width: 80px;
+
+  height: 100%;
+
+  transform: skewX(-25deg);
+
+  background: rgba(255, 255, 255, 0.12);
+
+  transition: 0.6s;
+}
+
+.load-more__button:hover::after {
+  left: 120%;
+}
+
+/*=========================================*
+ * HOVER
+ *=========================================*/
+
+.load-more__button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 28px rgba(239, 68, 68, 0.35);
+}
+
+.load-more__button:active {
   transform: scale(0.98);
+}
+
+/*=========================================*
+ * ICON
+ *=========================================*/
+
+.load-more__icon {
+  font-size: 1.2rem;
+
+  font-weight: 900;
+
+  transition: 0.25s;
+}
+
+.load-more__button:hover .load-more__icon {
+  transform: rotate(90deg);
+}
+
+/*==========================================================*
+ * RESPONSIVE
+ *==========================================================*/
+
+@media (max-width: 700px) {
+  .load-more__button {
+    height: 52px;
+
+    font-size: 0.85rem;
+  }
 }

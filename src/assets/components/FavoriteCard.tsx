@@ -45,7 +45,7 @@ function FavoriteCard({ pokemon, viewMode, addToTeam }: Props) {
 
         <div className="favorite-card__actions">
           <button
-            className="btn-add-team"
+            className="btn-add-team btn btn-primary btn--small"
             onClick={() => {
               addToTeam(pokemon);
             }}
@@ -54,7 +54,7 @@ function FavoriteCard({ pokemon, viewMode, addToTeam }: Props) {
           </button>
 
           <button
-            className="btn-remove-team"
+            className=" btn btn-primary btn--small"
             onClick={() => {
               isFavorites(pokemon.id) ? removeFavorites(pokemon.id) : null;
             }}

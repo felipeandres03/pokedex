@@ -1,5 +1,6 @@
 import { PokemonDetailsData } from "../types/Pokemon";
 import { useNavigate } from "react-router-dom";
+import { useFavorites } from "../context/FavoritesContext";
 
 type props = {
   pokemon: PokemonDetailsData;
@@ -7,6 +8,7 @@ type props = {
 
 function PokemonCardDetails({ pokemon }: props) {
   const navigate = useNavigate();
+  const { addFavorites, removeFavorites, isFavorites } = useFavorites();
   const primaryType = pokemon.types[0];
   return (
     <section className={`details details--${primaryType} `}>
@@ -20,18 +22,34 @@ function PokemonCardDetails({ pokemon }: props) {
           TOP BAR
       ========================================= */}
       <header className="details__topbar">
-        <button className="button-primary" onClick={() => navigate(-1)}>
+        <button
+          className="btn btn-primary btn--medium"
+          onClick={() => navigate(-1)}
+        >
           ← Back
         </button>
-        <button className="details__fav" aria-label="Favorite">
-          <img src="\icons\pokeball-pokemon-svgrepo-com.svg" alt="pokebola" />
+        <button
+          className={`details__fav ${isFavorites(pokemon.id) ? "active" : ""}`}
+          aria-label="Favorite"
+          onClick={() => {
+            if (isFavorites(pokemon.id)) {
+              removeFavorites(pokemon.id);
+            } else {
+              addFavorites(pokemon.id);
+            }
+          }}
+        >
+          <img
+            src={`/icons/pokeball-${isFavorites(pokemon.id) ? "active.svg" : "pokemon-svgrepo-com.svg"}`}
+            alt="pokebola"
+          />
         </button>
       </header>
 
       {/* =========================================
           HERO LAYOUT
       ========================================= */}
-      <div className="details__layout container-grid">
+      <div className="details__layout">
         {/* =========================================
             LEFT COLUMN
         ========================================= */}
@@ -113,25 +131,35 @@ function PokemonCardDetails({ pokemon }: props) {
             <h2 className="details__panel-title">📊 Base Stats</h2>
 
             {[
-              { label: "HP", value: pokemon.stats.hp, color: "stat--hp" },
+              {
+                label: "HP",
+                value: pokemon.stats.hp,
+                color: "stat--hp",
+                icon: "HP-icon",
+              },
               {
                 label: "Attack",
                 value: pokemon.stats.attack,
                 color: "stat--attack",
+                icon: "Attack-icon",
               },
               {
                 label: "Defense",
                 value: pokemon.stats.defense,
                 color: "stat--defense",
+                icon: "Defense-icon",
               },
               {
                 label: "Speed",
                 value: pokemon.stats.speed,
                 color: "stat--speed",
+                icon: "Speed-icon",
               },
-            ].map(({ label, value, color }) => (
+            ].map(({ label, value, color, icon }) => (
               <div key={label} className="details__stat">
-                <span className={`details__stat-icon ${color}`} />
+                <span className={`details__stat-icon ${color}`}>
+                  <img src={`/icons/${icon}.svg`} alt={label} />
+                </span>
                 <span className="details__stat-label">{label}</span>
                 <div className="details__bar">
                   <div

@@ -1,45 +1,37 @@
-import { useState } from "react";
+import ScrollableFilterRow from "./ScrollBar";
 
 type Props = {
   types: string[];
+  selectedType: string;
   handleType: (type: string) => void;
 };
 
-function BarType({ types, handleType }: Props) {
-  const [open, setOpen] = useState(false);
-
+function BarType({ types, selectedType, handleType }: Props) {
   return (
-    <section className="container-grid">
-      <div className="bar-type">
-        {/* BUTTON */}
+    <ScrollableFilterRow trackClassName="type-filter">
+      <button
+        className={`type-filter__button ${
+          selectedType === "all" ? "active-filter" : ""
+        }`}
+        onClick={() => handleType("all")}
+        title="All"
+      >
+        <img src="/icons/pokeball-pokemon-svgrepo-com.svg" alt="All" />
+      </button>
 
-        <button className="bar-type__trigger" onClick={() => setOpen(!open)}>
-          Types
-          <span className={`bar-type__arrow ${open ? "active" : ""}`}>▼</span>
+      {types.map((type) => (
+        <button
+          key={type}
+          className={`type-filter__button type--${type} ${
+            selectedType === type ? "active-filter" : ""
+          }`}
+          onClick={() => handleType(type)}
+          title={type}
+        >
+          <img src={`/icons/${type}-icon.svg`} alt={type} />
         </button>
-
-        {/* DROPDOWN */}
-
-        {open && (
-          <div className="bar-type__dropdown">
-            <button className="bar-type__item active">All</button>
-
-            {types.map((type) => (
-              <button
-                key={type}
-                className={`bar-type__item type--${type}`}
-                onClick={() => {
-                  handleType(type);
-                  setOpen(false);
-                }}
-              >
-                {type}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
+      ))}
+    </ScrollableFilterRow>
   );
 }
 

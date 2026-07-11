@@ -3,9 +3,10 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <header className="navbar">
-      <div className="navbar__logo">
-        <span> Pokedex</span>
-      </div>
+      <NavLink to="/" className="navbar__logo">
+        <img src="./public/icons/pokeball-pokemon-svgrepo-com.svg" />
+        Pokedex
+      </NavLink>
 
       <nav className="navbar__links">
         <NavLink to="/">Home</NavLink>
@@ -16,7 +17,12 @@ function NavBar() {
       </nav>
 
       <div className="navbar__actions">
-        <button>⚡</button>
+        <button>
+          <img
+            src="./public/icons/pokeball-pokemon-svgrepo-com.svg"
+            alt="icon"
+          />
+        </button>
       </div>
     </header>
   );

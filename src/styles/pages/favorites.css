@@ -2,6 +2,8 @@
   min-height: 100vh;
 
   padding-bottom: 3rem;
+
+  scale: (0.95);
 }
 
 /*----- TYPES BACKGRAUNDS-------  */
@@ -126,7 +128,7 @@
   background-attachment: fixed;
 }
 
-.backgraund-type-fayri {
+.backgraund-type-fairy {
   background:
     linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
     url("../images/backgraunds-favorites/backgraund-fayri.jpeg");
@@ -148,7 +150,7 @@
   background-attachment: fixed;
 }
 
-.backgraund-type-psiquy {
+.backgraund-type-psychic {
   background:
     linear-gradient(rgba(5, 7, 15, 0.85), rgba(5, 7, 15, 0.575)),
     url("../images/backgraunds-favorites/backgraund-psiquy.jpeg");
@@ -261,4 +263,10 @@
 
 .favorites-view button.active img {
   transform: scale(1.05);
+}
+
+@media (max-width: 580px) {
+  .favorites-selec-grid {
+    display: none;
+  }
 }

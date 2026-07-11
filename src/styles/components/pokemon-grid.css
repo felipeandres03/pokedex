@@ -1,7 +1,69 @@
 .pokemon-grid {
+  margin: 0 auto;
+
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(280px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 4fr));
 
-  gap: 2rem;
+  gap: 1rem;
+
+  padding-block: var(--spacing-xl);
+
+  align-items: stretch;
+}
+
+/* ===========================
+   Large Desktop
+=========================== */
+
+@media (min-width: 1600px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* ===========================
+   Desktop
+=========================== */
+
+@media (max-width: 1400px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===========================
+   Laptop
+=========================== */
+
+@media (max-width: 1150px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width: 850px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1.25rem;
+  }
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width: 600px) {
+  .pokemon-grid {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+
+    padding-block: 2rem;
+  }
 }

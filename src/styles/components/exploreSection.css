@@ -1,0 +1,153 @@
+/*=========================================
+        EXPLORE SECTION
+=========================================*/
+
+.explorer-section {
+  width: min(100%, 900px);
+
+  margin: 3rem auto 4rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  gap: 1.4rem;
+}
+
+/*==============================*/
+
+.explorer-section__tag {
+  padding: 0.55rem 1.2rem;
+
+  border-radius: 999px;
+
+  background: rgba(239, 68, 68, 0.12);
+
+  border: 1px solid rgba(239, 68, 68, 0.35);
+
+  color: var(--color-primary);
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+/*==============================*/
+
+.explorer-section__title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+
+  font-weight: 900;
+
+  line-height: 1.1;
+}
+
+/*==============================*/
+
+.explorer-section__description {
+  max-width: 720px;
+
+  color: var(--color-text-muted);
+
+  font-size: 1.1rem;
+
+  line-height: 1.8;
+}
+
+/*==============================*/
+
+.explorer-section__stats {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 1.5rem;
+
+  margin-top: 1rem;
+}
+
+/*==============================*/
+
+.explorer-stat {
+  min-width: 180px;
+
+  padding: 1.25rem;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid var(--color-border);
+
+  backdrop-filter: blur(12px);
+
+  transition: 0.3s;
+}
+
+.explorer-stat:hover {
+  transform: translateY(-6px);
+
+  border-color: var(--color-primary);
+}
+
+/*==============================*/
+
+.explorer-stat__number {
+  display: block;
+
+  font-size: 2rem;
+
+  font-weight: 900;
+
+  color: var(--color-primary);
+}
+
+/*==============================*/
+
+.explorer-stat__label {
+  display: block;
+
+  margin-top: 0.4rem;
+
+  color: var(--color-text-muted);
+
+  letter-spacing: 1px;
+}
+
+/*==============================*/
+
+@media (max-width: 768px) {
+  .explorer-section {
+    margin: 2rem auto 3rem;
+
+    padding: 0 1rem;
+  }
+
+  .explorer-section__description {
+    font-size: 1rem;
+  }
+
+  .explorer-stat {
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .explorer-section__stats {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .explorer-stat {
+    width: 100%;
+  }
+}

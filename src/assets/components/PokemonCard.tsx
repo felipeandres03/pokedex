@@ -9,55 +9,68 @@ type Props = {
 function PokemonCard({ pokemon }: Props) {
   const navigate = useNavigate();
 
-  const { addFavorites, isFavorites, removeFavorites } = useFavorites();
+  const { addFavorites, removeFavorites, isFavorites } = useFavorites();
 
   return (
     <article
-      className={`pokemon-card  pokemon-card--${pokemon.types[0]} `}
+      className={`pokemon-card pokemon-card--${pokemon.types[0]}`}
       onClick={() => navigate(`/pokemon/${pokemon.id}`)}
     >
-      {/*particulas */}
-      <div className="pokemon-card__particles"></div>
+      {/* Fondo decorativo */}
+      <div className="pokemon-card__background" />
 
-      {/* TOP */}
-      <div className="pokemon-card__top">
-        <span className="pokemon-card__id">#{pokemon.id}</span>
+      {/* Pokeball gigante */}
+      <div className="pokemon-card__pokeball" />
 
-        <button
-          className={`pokemon-card__favorite ${isFavorites(pokemon.id) ? "active-favorites" : ""}`}
-          onClick={() => {
-            isFavorites(pokemon.id)
-              ? removeFavorites(pokemon.id)
-              : addFavorites(pokemon.id);
-          }}
-        >
-          <img
-            className="favorite-icon"
-            src="/icons/pokeball-pokemon-svgrepo-com.svg"
-            alt="pokebola"
-          />
-        </button>
-      </div>
+      <div className="pokemon-card__wrapper">
+        {/* HEADER */}
 
-      {/* IMAGE */}
-      <div className="pokemon-card__image">
-        <img src={pokemon.image} alt={pokemon.name} />
-      </div>
+        <div className="pokemon-card__top">
+          <span className="pokemon-card__id">
+            #{pokemon.id.toString().padStart(4, "0")}
+          </span>
 
-      {/* INFO */}
-      <div className="pokemon-card__content">
-        <h2 className="pokemon-card__title">{pokemon.name}</h2>
+          <button
+            className={`pokemon-card__favorite ${
+              isFavorites(pokemon.id) ? "active-favorites" : ""
+            }`}
+            onClick={(e) => {
+              e.stopPropagation();
 
-        {/* TYPES */}
-        <div className="pokemon-card__types">
-          {pokemon.types.map((type) => (
-            <span
-              key={type}
-              className={`pokemon-card__type pokemon-card__type--${type}`}
-            >
-              {type}
-            </span>
-          ))}
+              isFavorites(pokemon.id)
+                ? removeFavorites(pokemon.id)
+                : addFavorites(pokemon.id);
+            }}
+          >
+            <img
+              className="favorite-icon"
+              src="/icons/pokeball-pokemon-svgrepo-com.svg"
+              alt="Favorite"
+            />
+          </button>
+        </div>
+
+        {/* IMAGE */}
+
+        <div className="pokemon-card__image">
+          <img src={pokemon.image} alt={pokemon.name} />
+        </div>
+
+        {/* CONTENT */}
+
+        <div className="pokemon-card__content">
+          <h2 className="pokemon-card__title">{pokemon.name}</h2>
+
+          <div className="pokemon-card__types">
+            {pokemon.types.map((type) => (
+              <span
+                key={type}
+                className={`pokemon-card__type pokemon-card__type--${type}`}
+              >
+                {type}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </article>

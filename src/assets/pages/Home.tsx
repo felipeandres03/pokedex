@@ -2,19 +2,30 @@ import { useEffect, useState } from "react";
 import { getPokemonById, getPokemonByName } from "../services/pokemonApi";
 import { PokemonCardData } from "../types/Pokemon";
 import PokemonGrid from "../components/PokemonGrid";
+import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import Loader from "../components/Loader";
 import ErrorMessage from "../components/ErrorMessage";
+import ExplorerSection from "../components/ExplorerSection";
 import Footer from "../components/Footer";
 import { transformPokemonData } from "../services/transformers";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [pokemons, setPokemons] = useState<PokemonCardData[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [homePokemons, setHomePokemons] = useState([
-    25, 149, 448, 254, 392, 6, 419, 559,
-  ]);
+
+  const generateRandomPokemons = () => {
+    const randomPokemons = [];
+    for (let i = 0; i < 8; i++) {
+      const randomId = Math.floor(Math.random() * 1025) + 1;
+      randomPokemons.push(randomId);
+    }
+    return randomPokemons;
+  };
+
+  const [homePokemons, setHomePokemons] = useState(generateRandomPokemons());
 
   useEffect(() => {
     async function loadInicialPokemons() {
@@ -37,7 +48,7 @@ function Home() {
       }
     }
     loadInicialPokemons();
-  }, []);
+  }, [homePokemons]);
 
   const handleSearch = (searchValue: string) => {
     let filter = Number(searchValue);
@@ -76,15 +87,40 @@ function Home() {
 
   return (
     <>
-      <Hero handleSearch={handleSearch} />
+      <NavBar />
+      <main className="home">
+        <Hero handleSearch={handleSearch} />
 
-      {loading && <Loader />}
+        <ExplorerSection />
+        <section className="home-showcase">
+          <div className="home-showcase__header">
+            <div className="home-showcase__content">
+              <span className="home-showcase__tag">FEATURED POKÉMON</span>
 
-      {error && <ErrorMessage error={error} />}
+              <h2 className="home-showcase__title">Begin Your Journey</h2>
 
-      {!loading && !error && <PokemonGrid pokemons={pokemons} />}
+              <p className="home-showcase__description">
+                Discover a curated selection of Pokémon before exploring the
+                complete Pokédex. Every adventure starts with a single Pokémon.
+              </p>
+            </div>
+          </div>
 
-      <Footer />
+          {loading && <Loader />}
+
+          {error && <ErrorMessage error={error} />}
+
+          {!loading && !error && <PokemonGrid pokemons={pokemons} />}
+
+          <div className="home-showcase__actions">
+            <Link to="/pokedex" className="btn btn-primary btn--medium">
+              View All →
+            </Link>
+          </div>
+        </section>
+
+        <Footer />
+      </main>
     </>
   );
 }
