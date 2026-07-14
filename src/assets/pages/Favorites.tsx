@@ -1,6 +1,8 @@
 import HeroFavorites from "../components/HeroFavorites";
 import NavBar from "../components/NavBar";
 import StatsTeam from "../components/StatsTeam";
+import ErrorMessage from "../components/ErrorMessage";
+import Loader from "../components/Loader";
 import TeamPokemon from "../components/TeamPokemon";
 import PokemonGridFavorites from "../components/PokemonGridFavorites";
 import { transformPokemonFavorites } from "../services/transformers";
@@ -14,12 +16,14 @@ function Favorites() {
   const [pokemons, setPokemons] = useState<PokemonCardFavorites[]>([]);
   const [viewMode, setViewMode] = useState<"list" | "grid">("grid");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [team, setTeam] = useState<teamSlot[]>(Array(8).fill(null));
   const [powerBattleTeam, setPowerBattleTeam] = useState(0);
 
   useEffect(() => {
     async function loadPokemonsFavorites() {
       try {
+        setLoading(true);
         const data = await Promise.all(
           favorites.map(async (id) => {
             const pokemon = await getPokemonFullDetails(id);
@@ -32,6 +36,8 @@ function Favorites() {
         setPokemons(data);
       } catch {
         setError("ERRO CARGANDO POKEMONS");
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -139,11 +145,17 @@ function Favorites() {
           </div>
         </section>
 
-        <PokemonGridFavorites
-          pokemons={pokemons}
-          viewMode={viewMode}
-          addToTeam={onAddToTeam}
-        />
+        {loading && <Loader />}
+
+        {error && <ErrorMessage error={error} />}
+
+        {!loading && !error && (
+          <PokemonGridFavorites
+            pokemons={pokemons}
+            viewMode={viewMode}
+            addToTeam={onAddToTeam}
+          />
+        )}
       </main>
     </>
   );
