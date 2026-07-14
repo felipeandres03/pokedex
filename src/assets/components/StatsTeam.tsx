@@ -8,7 +8,10 @@ function StatsTeam({ favorites, powerTeam, primaryType }: Props) {
   return (
     <section className="stats-team">
       <article className="stats-team__card">
-        <img src="/icons/heart-svgrepo-com.svg" alt="favorites icon" />
+        <img
+          src={`${import.meta.env.BASE_URL}/icons/heart-svgrepo-com.svg`}
+          alt="favorites icon"
+        />
 
         <div className="stats-team__info">
           <span>Favorites</span>
@@ -18,7 +21,10 @@ function StatsTeam({ favorites, powerTeam, primaryType }: Props) {
       </article>
 
       <article className="stats-team__card">
-        <img src={`/icons/${primaryType}-icon.svg`} alt="type icon" />
+        <img
+          src={`${import.meta.env.BASE_URL}/icons/${primaryType}-icon.svg`}
+          alt="type icon"
+        />
 
         <div className="stats-team__info">
           <span>Main Type</span>
@@ -28,7 +34,7 @@ function StatsTeam({ favorites, powerTeam, primaryType }: Props) {
 
       <article className="stats-team__card">
         <img
-          src="/icons/sword-origami-paper-svgrepo-com.svg"
+          src={`${import.meta.env.BASE_URL}/icons/sword-origami-paper-svgrepo-com.svg`}
           alt="power icon"
         />
 

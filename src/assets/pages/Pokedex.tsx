@@ -192,7 +192,7 @@ function Pokedex() {
             {/* LOGO */}
             <div className="pokedex-logo">
               <img
-                src="/icons/pokeball-pokemon-svgrepo-com.svg"
+                src={`${import.meta.env.BASE_URL}/icons/pokeball-pokemon-svgrepo-com.svg`}
                 alt="Pokeball"
               />
             </div>

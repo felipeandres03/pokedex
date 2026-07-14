@@ -20,7 +20,7 @@ function FilterPanel({
     <section className="filter-panel">
       <div className="filter-panel__row">
         <div className="filter-panel__title">
-          <img src="icons/type-icon.svg" />
+          <img src={`${import.meta.env.BASE_URL}icons/type-icon.svg`} />
           <span>Filter by Type</span>
         </div>
 
@@ -37,7 +37,7 @@ function FilterPanel({
 
       <div className="filter-panel__row">
         <div className="filter-panel__title">
-          <img src="icons/generation-icon.svg" />
+          <img src={`${import.meta.env.BASE_URL}icons/generation-icon.svg`} />
           <span>Generation</span>
         </div>
 

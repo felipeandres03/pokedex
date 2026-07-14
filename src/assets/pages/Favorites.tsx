@@ -132,7 +132,10 @@ function Favorites() {
                 setViewMode("grid");
               }}
             >
-              <img src="/icons/grid-icon.svg" alt="grid" />
+              <img
+                src={`${import.meta.env.BASE_URL}/icons/grid-icon.svg`}
+                alt="grid"
+              />
             </button>
             <button
               className={viewMode === "list" ? "active" : ""}
@@ -140,7 +143,10 @@ function Favorites() {
                 setViewMode("list");
               }}
             >
-              <img src="/icons/list-icon.svg" alt="list" />
+              <img
+                src={`${import.meta.env.BASE_URL}/icons/list-icon.svg`}
+                alt="list"
+              />
             </button>
           </div>
         </section>

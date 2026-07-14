@@ -6,7 +6,7 @@ type Props = {
 };
 
 const generations = [
-  { id: 1, icon: "/icons/Kanto-icon.svg", name: "Kanto" },
+  { id: 1, icon: `/icons/Kanto-icon.svg`, name: "Kanto" },
   { id: 2, icon: "/icons/Johto-icon.svg", name: "Johto" },
   { id: 3, icon: "/icons/Hoenn-icon.svg", name: "Hoenn" },
   { id: 4, icon: "/icons/Sinnoh-icon.svg", name: "Sinnoh" },
@@ -29,7 +29,10 @@ function GenerationFilter({ selectedGeneration, handleGeneration }: Props) {
           onClick={() => handleGeneration(generation.id)}
           title={generation.name}
         >
-          <img src={generation.icon} alt={generation.name} />
+          <img
+            src={`${import.meta.env.BASE_URL}/${generation.icon}`}
+            alt={generation.name}
+          />
         </button>
       ))}
     </ScrollableFilterRow>

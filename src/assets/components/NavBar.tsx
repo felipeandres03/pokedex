@@ -4,7 +4,9 @@ function NavBar() {
   return (
     <header className="navbar">
       <NavLink to="/" className="navbar__logo">
-        <img src="./public/icons/pokeball-pokemon-svgrepo-com.svg" />
+        <img
+          src={`${import.meta.env.BASE_URL}/icons/pokeball-pokemon-svgrepo-com.svg`}
+        />
         Pokedex
       </NavLink>
 
@@ -19,7 +21,7 @@ function NavBar() {
       <div className="navbar__actions">
         <button>
           <img
-            src="./public/icons/pokeball-pokemon-svgrepo-com.svg"
+            src={`${import.meta.env.BASE_URL}/icons/pokeball-pokemon-svgrepo-com.svg`}
             alt="icon"
           />
         </button>

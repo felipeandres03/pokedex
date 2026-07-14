@@ -16,7 +16,10 @@ function BarType({ types, selectedType, handleType }: Props) {
         onClick={() => handleType("all")}
         title="All"
       >
-        <img src="/icons/pokeball-pokemon-svgrepo-com.svg" alt="All" />
+        <img
+          src={`${import.meta.env.BASE_URL}/icons/pokeball-pokemon-svgrepo-com.svg`}
+          alt="All"
+        />
       </button>
 
       {types.map((type) => (
@@ -28,7 +31,10 @@ function BarType({ types, selectedType, handleType }: Props) {
           onClick={() => handleType(type)}
           title={type}
         >
-          <img src={`/icons/${type}-icon.svg`} alt={type} />
+          <img
+            src={`${import.meta.env.BASE_URL}/icons/${type}-icon.svg`}
+            alt={type}
+          />
         </button>
       ))}
     </ScrollableFilterRow>

@@ -22,7 +22,6 @@ function Home() {
       const randomId = Math.floor(Math.random() * 1025) + 1;
       randomPokemons.push(randomId);
     }
-    setHomePokemons(randomPokemons);
     return randomPokemons;
   };
 
@@ -43,6 +42,7 @@ function Home() {
         );
         setPokemons(data);
       } catch {
+        setHomePokemons;
         setError("ERROR CARGANDO POKEMONS");
       } finally {
         setLoading(false);

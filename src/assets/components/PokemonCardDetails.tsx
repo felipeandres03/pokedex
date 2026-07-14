@@ -40,7 +40,7 @@ function PokemonCardDetails({ pokemon }: props) {
           }}
         >
           <img
-            src={`/icons/pokeball-${isFavorites(pokemon.id) ? "active.svg" : "pokemon-svgrepo-com.svg"}`}
+            src={`${import.meta.env.BASE_URL}/icons/pokeball-${isFavorites(pokemon.id) ? "active.svg" : "pokemon-svgrepo-com.svg"}`}
             alt="pokebola"
           />
         </button>
@@ -158,7 +158,10 @@ function PokemonCardDetails({ pokemon }: props) {
             ].map(({ label, value, color, icon }) => (
               <div key={label} className="details__stat">
                 <span className={`details__stat-icon ${color}`}>
-                  <img src={`/icons/${icon}.svg`} alt={label} />
+                  <img
+                    src={`${import.meta.env.BASE_URL}icons/${icon}.svg`}
+                    alt={label}
+                  />
                 </span>
                 <span className="details__stat-label">{label}</span>
                 <div className="details__bar">

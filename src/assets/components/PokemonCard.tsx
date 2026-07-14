@@ -44,7 +44,7 @@ function PokemonCard({ pokemon }: Props) {
           >
             <img
               className="favorite-icon"
-              src="/icons/pokeball-pokemon-svgrepo-com.svg"
+              src={`${import.meta.env.BASE_URL}/icons/pokeball-pokemon-svgrepo-com.svg`}
               alt="Favorite"
             />
           </button>
